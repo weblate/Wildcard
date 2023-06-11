@@ -3,7 +3,7 @@
 	<schema id="io.github.fkinoshita.Wildcard" path="/io/github/fkinoshita/Wildcard/">
 
 	  <key name="window-width" type="i">
-	    <default>380</default>
+	    <default>370</default>
 	    <summary>Window width</summary>
 	  </key>
 

@@ -1,12 +1,12 @@
 {
-    "app-id" : "io.github.fkinoshita.Patterns",
+    "app-id" : "io.github.fkinoshita.Wildcard",
     "runtime" : "org.gnome.Platform",
     "runtime-version" : "master",
     "sdk" : "org.gnome.Sdk",
     "sdk-extensions" : [
         "org.freedesktop.Sdk.Extension.rust-stable"
     ],
-    "command" : "patterns",
+    "command" : "wildcard",
     "finish-args" : [
         "--share=ipc",
         "--socket=fallback-x11",
@@ -20,7 +20,7 @@
         ],
         "env" : {
             "RUST_BACKTRACE" : "1",
-            "RUST_LOG" : "patterns=debug"
+            "RUST_LOG" : "wildcard=debug"
         }
     },
     "cleanup" : [
@@ -47,7 +47,7 @@
             ]
         },
         {
-            "name" : "patterns",
+            "name" : "wildcard",
             "builddir" : true,
             "buildsystem" : "meson",
             "config-opts" : [
@@ -56,7 +56,7 @@
             "sources" : [
                 {
                     "type" : "dir",
-                    "path" : "."
+                    "path" : ".."
                 }
             ]
         }

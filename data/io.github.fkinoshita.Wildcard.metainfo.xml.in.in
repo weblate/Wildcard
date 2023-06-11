@@ -3,32 +3,32 @@
 	<id>@app-id@</id>
   <metadata_license>CC0-1.0</metadata_license>
 	<project_license>GPL-3.0-or-later</project_license>
-  <name>Patterns</name>
+  <name>Wildcard</name>
   <summary>Test your regular expressions</summary>
   <developer_name>Felipe Kinoshita</developer_name>
   <update_contact>fkinoshita@gnome.org</update_contact>
   <translation type="gettext">@gettext-package@</translation>
-	<launchable type="desktop-id">@app-id@</launchable>
+	<launchable type="desktop-id">@app-id@.desktop</launchable>
 	<description>
 	  <p>
-	    Patterns gives you a nice and simple to use interface to test/practice
+	    Wildcard gives you a nice and simple to use interface to test/practice
 	    regular expressions.
 	  </p>
 	</description>
   <screenshots>
     <screenshot type="default">
       <image>
-        https://raw.githubusercontent.com/fkinoshita/Patterns/main/data/screenshots/preview.png
+        https://raw.githubusercontent.com/fkinoshita/Wildcard/main/data/screenshots/preview.png
       </image>
     </screenshot>
     <screenshot>
       <image>
-        https://raw.githubusercontent.com/fkinoshita/Patterns/main/data/screenshots/dark.png
+        https://raw.githubusercontent.com/fkinoshita/Wildcard/main/data/screenshots/dark.png
       </image>
     </screenshot>
   </screenshots>
-  <url type="homepage">https://github.com/fkinoshita/Patterns</url>
-  <url type="bugtracker">https://github.com/fkinoshita/Patterns/issues</url>
+  <url type="homepage">https://github.com/fkinoshita/Wildcard</url>
+  <url type="bugtracker">https://github.com/fkinoshita/Wildcard/issues</url>
   <url type="donation">https://ko-fi.com/fkinoshita</url>
   <content_rating type="oars-1.0"/>
   <kudos>

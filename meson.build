@@ -1,5 +1,5 @@
 project(
-  'patterns',
+  'wildcard',
   'rust',
   version: '0.1.0',
   meson_version: '>= 0.62.0',
@@ -9,7 +9,7 @@ project(
 i18n = import('i18n')
 gnome = import('gnome')
 
-base_id = 'io.github.fkinoshita.Patterns'
+base_id = 'io.github.fkinoshita.Wildcard'
 
 dependency('gtk4', version: '>=4.10')
 dependency('libadwaita-1', version: '>=1.3')

@@ -1,6 +1,6 @@
-data/io.github.fkinoshita.Patterns.desktop.in.in
-data/io.github.fkinoshita.Patterns.gschema.xml.in
-data/io.github.fkinoshita.Patterns.metainfo.xml.in.in
+data/io.github.fkinoshita.Wildcard.desktop.in.in
+data/io.github.fkinoshita.Wildcard.gschema.xml.in
+data/io.github.fkinoshita.Wildcard.metainfo.xml.in.in
 data/resources/ui/shortcuts.ui
 data/resources/ui/window.ui
 src/main.rs

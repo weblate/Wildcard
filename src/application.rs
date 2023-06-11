@@ -65,7 +65,7 @@ impl Default for Application {
     fn default() -> Self {
         glib::Object::builder()
             .property("application-id", APP_ID)
-            .property("resource-base-path", "/io/github/fkinoshita/Patterns/")
+            .property("resource-base-path", "/io/github/fkinoshita/Wildcard/")
             .build()
     }
 }
@@ -91,7 +91,7 @@ impl Application {
     }
 
     pub fn run(&self) -> glib::ExitCode {
-        println!("Patterns ({})", APP_ID);
+        println!("Wildcard ({})", APP_ID);
         println!("Version: {} ({})", VERSION, PROFILE);
         println!("Datadir: {}", PKGDATADIR);
 

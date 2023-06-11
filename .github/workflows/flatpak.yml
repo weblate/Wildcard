@@ -28,7 +28,7 @@ jobs:
         platforms: arm64
     - uses: flatpak/flatpak-github-actions/flatpak-builder@v6.1
       with:
-        bundle: patterns.flatpak
-        manifest-path: io.github.fkinoshita.Patterns.json
+        bundle: wildcard.flatpak
+        manifest-path: io.github.fkinoshita.Wildcard.json
         cache-key: flatpak-builder-${{ github.sha }}
         arch: ${{ matrix.arch }}

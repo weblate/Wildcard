@@ -4,10 +4,10 @@
          xmlns:gnome="http://api.gnome.org/doap-extensions#"
          xmlns="http://usefulinc.com/ns/doap#">
 
-  <name xml:lang="en">Patterns</name>
+  <name xml:lang="en">Wildcard</name>
   <shortdesc xml:lang="en">Test your regular expressions</shortdesc>
-  <homepage rdf:resource="https://github.com/fkinoshita/Patterns" />
-  <bug-database rdf:resource="https://github.com/fkinoshita/Patterns/issues"/>
+  <homepage rdf:resource="https://github.com/fkinoshita/Wildcard" />
+  <bug-database rdf:resource="https://github.com/fkinoshita/Wildcard/issues"/>
 
   <programming-language>Rust</programming-language>
   <platform>GTK 4</platform>

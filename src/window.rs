@@ -17,7 +17,7 @@ mod imp {
     use super::*;
 
     #[derive(Debug, gtk::CompositeTemplate)]
-    #[template(resource = "/io/github/fkinoshita/Patterns/ui/window.ui")]
+    #[template(resource = "/io/github/fkinoshita/Wildcard/ui/window.ui")]
     pub struct Window {
         pub settings: gio::Settings,
 
@@ -249,11 +249,11 @@ impl Window {
     fn show_about_dialog(&self) {
         let dialog = adw::AboutWindow::builder()
             .application_icon(APP_ID)
-            .application_name(gettext("Patterns"))
+            .application_name(gettext("Wildcard"))
             .license_type(gtk::License::Gpl30)
             .comments(gettext("Test your regular expressions"))
-            .website("https://github.com/fkinoshita/Patterns")
-            .issue_url("https://github.com/fkinoshita/Patterns/issues/new")
+            .website("https://github.com/fkinoshita/Wildcard")
+            .issue_url("https://github.com/fkinoshita/Wildcard/issues/new")
             .version(VERSION)
             .transient_for(self)
             .translator_credits(gettext("translator-credits"))

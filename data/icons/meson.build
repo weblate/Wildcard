@@ -1,4 +1,4 @@
-application_id = 'io.github.fkinoshita.Patterns'
+application_id = 'io.github.fkinoshita.Wildcard'
 
 scalable_dir = join_paths('hicolor', 'scalable', 'apps')
 install_data(

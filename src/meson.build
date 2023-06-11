@@ -2,7 +2,7 @@ conf = configuration_data()
 conf.set_quoted('APPID', application_id)
 conf.set_quoted('PROFILE', profile)
 conf.set_quoted('VERSION', meson.project_version())
-conf.set_quoted('GETTEXT_PACKAGE', 'patterns')
+conf.set_quoted('GETTEXT_PACKAGE', 'wildcard')
 conf.set_quoted('LOCALEDIR', join_paths(get_option('prefix'), get_option('localedir')))
 conf.set_quoted('PKGDATADIR', pkgdatadir)
 configure_file(

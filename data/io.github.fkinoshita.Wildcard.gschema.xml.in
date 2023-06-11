@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schemalist gettext-domain="patterns">
-	<schema id="io.github.fkinoshita.Patterns" path="/io/github/fkinoshita/Patterns/">
+<schemalist gettext-domain="wildcard">
+	<schema id="io.github.fkinoshita.Wildcard" path="/io/github/fkinoshita/Wildcard/">
 
 	  <key name="window-width" type="i">
-	    <default>420</default>
+	    <default>380</default>
 	    <summary>Window width</summary>
 	  </key>
 

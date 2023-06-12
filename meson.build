@@ -42,7 +42,7 @@ if get_option('profile') == 'development'
     version = meson.project_version() + '-' + rev_txt
 else
     application_id = base_id
-    profile = ''
+    profile = 'Default'
     version = meson.project_version()
 endif
 

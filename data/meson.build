@@ -6,8 +6,8 @@ desktop_conf.set('icon', application_id)
 desktop_file = i18n.merge_file(
   type: 'desktop',
   input: configure_file(
-    input: '@0@.desktop.in.in'.format(application_id),
-    output: '@BASENAME@',
+    input: files('@0@.desktop.in.in'.format(base_id)),
+    output: '@0@.desktop.in'.format(base_id),
     configuration: desktop_conf
   ),
   output: '@0@.desktop'.format(application_id),
@@ -32,7 +32,7 @@ metainfo_conf.set('app-id', application_id)
 metainfo_conf.set('gettext-package', meson.project_name())
 metainfo = i18n.merge_file(
   input: configure_file(
-    input: files('@0@.metainfo.xml.in.in'.format(application_id)),
+    input: files('@0@.metainfo.xml.in.in'.format(base_id)),
     output: '@0@.metainfo.xml.in'.format(application_id),
     configuration: metainfo_conf
   ),

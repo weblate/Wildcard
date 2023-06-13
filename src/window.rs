@@ -152,7 +152,7 @@ mod imp {
                 "{matches} match",
                 "{matches} matches",
                 captures,
-                &[("matches", &format!("{}", captures))],
+                &[("matches", &"a".replace("a", &captures.to_string()))],
             ));
         }
     }

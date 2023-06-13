@@ -31,6 +31,19 @@
   <url type="bugtracker">https://github.com/fkinoshita/Wildcard/issues</url>
   <url type="donation">https://ko-fi.com/fkinoshita</url>
   <content_rating type="oars-1.0"/>
+  <releases>
+    <release version="0.1.0" date="2023-06-13">
+      <description>
+        <p>This is the first release of Wildcard, here are some available features:</p>
+        <ul>
+          <li>Support for flags with the regex/FLAGS syntax</li>
+          <li>Quickly see how many matches found in the bottom right corner</li>
+        </ul>
+        <p>Wildcard is made possible by volunteer developers, designers, and translators. Thank you for your contributions!</p>
+        <p>Feel free to report issues and ask for new features.</p>
+      </description>
+    </release>
+  </releases>
   <kudos>
      <!--
        GNOME Software kudos:

@@ -126,7 +126,7 @@ mod imp {
             for (index, caps) in re.captures_iter(&test_string).enumerate() {
                 let m = caps.get(0).unwrap();
 
-                if m.as_str().len() < 1 {
+                if m.is_empty() {
                     continue;
                 }
 
@@ -156,7 +156,7 @@ mod imp {
                 "{matches} match",
                 "{matches} matches",
                 captures,
-                &[("matches", &"a".replace("a", &captures.to_string()))],
+                &[("matches", &captures.to_string())],
             ));
         }
     }

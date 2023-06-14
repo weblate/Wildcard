@@ -13,6 +13,11 @@
 
 Wildcard gives you a nice and simple to use interface to test/practice regular expressions.
 
+## CI Build (Not recommended)
+
+If you want to quickly test Wildcard you can grab the latest CI build [here](https://nightly.link/fkinoshita/Wildcard/workflows/flatpak/main).
+Then you need to unzip the archive's content and install the application with the command `flatpak install wildcard.flatpak`.
+
 ## Code of conduct
 
 Wildcard follows the GNOME project [Code of Conduct](./code-of-conduct.md). All

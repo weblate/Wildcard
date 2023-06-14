@@ -7,6 +7,19 @@
 <p align="center"><strong>Test your regular expressions</strong></p>
 
 <p align="center">
+  <a href="https://flathub.org/apps/details/io.github.fkinoshita.Wildcard">
+    <img width="200" alt="Download on Flathub" src="https://flathub.org/assets/badges/flathub-badge-en.svg"/>
+  </a>
+  <br>
+</p>
+
+<p align="center">
+  <a href="https://flathub.org/apps/details/io.github.fkinoshita.Wildcard">
+    <img alt="Flathub downloads" src="https://img.shields.io/badge/dynamic/json?color=informational&label=downloads&logo=flathub&logoColor=white&query=%24.installs_total&url=https%3A%2F%2Fflathub.org%2Fapi%2Fv2%2Fstats%2Fio.github.fkinoshita.Wildcard"/>
+  </a>
+</p>
+
+<p align="center">
   <img src="/data/screenshots/preview.png" alt="Preview"/>
   <img src="/data/screenshots/dark.png" alt="Dark"/>
 </p>

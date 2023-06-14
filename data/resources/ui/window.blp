@@ -49,10 +49,7 @@ template $Window : Adw.ApplicationWindow {
             styles ["card", "text-box"]
 
             Gtk.ScrolledWindow {
-              margin-top: 12;
-              margin-bottom: 12;
-              margin-start: 12;
-              margin-end: 12;
+              height-request: 82;
 
               styles ["scrolled-window"]
 
@@ -61,6 +58,10 @@ template $Window : Adw.ApplicationWindow {
                   buffer: regex_buffer;
                   wrap-mode: word_char;
                   hexpand: true;
+                  margin-top: 12;
+                  margin-bottom: 12;
+                  margin-start: 12;
+                  margin-end: 12;
                 };
 
                 [overlay]
@@ -69,6 +70,8 @@ template $Window : Adw.ApplicationWindow {
                   ellipsize: end;
                   halign: start;
                   valign: start;
+                  margin-top: 12;
+                  margin-start: 12;
                   sensitive: false;
                 }
               }
@@ -83,11 +86,6 @@ template $Window : Adw.ApplicationWindow {
             styles ["card", "text-box", "darker"]
 
             Gtk.ScrolledWindow {
-              margin-top: 12;
-              margin-bottom: 12;
-              margin-start: 12;
-              margin-end: 12;
-
               styles ["scrolled-window"]
 
               Gtk.Overlay {
@@ -96,6 +94,10 @@ template $Window : Adw.ApplicationWindow {
                   wrap-mode: word_char;
                   hexpand: true;
                   vexpand: true;
+                  margin-top: 12;
+                  margin-bottom: 12;
+                  margin-start: 12;
+                  margin-end: 12;
                 };
 
                 [overlay]
@@ -105,6 +107,8 @@ template $Window : Adw.ApplicationWindow {
                   halign: start;
                   valign: start;
                   sensitive: false;
+                  margin-top: 12;
+                  margin-start: 12;
                 }
               }
             }
@@ -112,8 +116,9 @@ template $Window : Adw.ApplicationWindow {
             Gtk.Label matches_label {
               label: _("no matches");
               halign: end;
+              margin-top: 6;
               margin-bottom: 6;
-              margin-end: 6;
+              margin-end: 12;
 
               styles ["dim-label"]
             }

@@ -126,6 +126,10 @@ mod imp {
             for (index, caps) in re.captures_iter(&test_string).enumerate() {
                 let m = caps.get(0).unwrap();
 
+                if m.as_str().len() < 1 {
+                    continue;
+                }
+
                 let mut start_iter = self.test_buffer.start_iter();
                 start_iter.set_offset(m.start() as i32);
 

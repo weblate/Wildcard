@@ -22,15 +22,15 @@ mod imp {
         pub settings: gio::Settings,
 
         #[template_child]
-        pub regex_text_view: TemplateChild<gtk::TextView>,
+        pub regex_text_view: TemplateChild<sourceview5::View>,
         #[template_child]
         pub regex_placeholder: TemplateChild<gtk::Label>,
         #[template_child]
         pub test_placeholder: TemplateChild<gtk::Label>,
         #[template_child]
-        pub regex_buffer: TemplateChild<gtk::TextBuffer>,
+        pub regex_buffer: TemplateChild<sourceview5::Buffer>,
         #[template_child]
-        pub test_buffer: TemplateChild<gtk::TextBuffer>,
+        pub test_buffer: TemplateChild<sourceview5::Buffer>,
         #[template_child]
         pub matches_label: TemplateChild<gtk::Label>,
     }
@@ -90,6 +90,8 @@ mod imp {
     impl Window {
         #[template_callback]
         fn on_buffer_changed(&self, _text_buffer: &gtk::TextBuffer) {
+            self.regex_buffer.apply_tag_by_name("draw-spaces", &self.regex_buffer.start_iter(), &self.regex_buffer.end_iter());
+
             let regex_string = self.regex_buffer.text(
                 &self.regex_buffer.start_iter(),
                 &self.regex_buffer.end_iter(),
@@ -199,6 +201,13 @@ impl Window {
         let imp = self.imp();
 
         imp.regex_text_view.grab_focus();
+
+        let draw_spaces_tag = sourceview5::Tag::builder()
+            .name("draw-spaces")
+            .draw_spaces(true)
+            .build();
+
+        imp.regex_buffer.tag_table().add(&draw_spaces_tag);
 
         imp.test_buffer.create_tag(
             Some("marked_first"),

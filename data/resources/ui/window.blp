@@ -1,13 +1,6 @@
 using Gtk 4.0;
 using Adw 1;
-
-Gtk.TextBuffer regex_buffer {
-  changed => $on_buffer_changed() swapped;
-}
-
-Gtk.TextBuffer test_buffer {
-  changed => $on_buffer_changed() swapped;
-}
+using GtkSource 5;
 
 template $Window : Adw.ApplicationWindow {
   title: _("Wildcard");
@@ -54,8 +47,10 @@ template $Window : Adw.ApplicationWindow {
               styles ["scrolled-window"]
 
               Gtk.Overlay {
-                child: Gtk.TextView regex_text_view {
-                  buffer: regex_buffer;
+                child: GtkSource.View regex_text_view {
+                  buffer: GtkSource.Buffer regex_buffer {
+                    changed => $on_buffer_changed() swapped;
+                  };
                   wrap-mode: word_char;
                   hexpand: true;
                   margin-top: 12;
@@ -90,7 +85,9 @@ template $Window : Adw.ApplicationWindow {
 
               Gtk.Overlay {
                 child: Gtk.TextView test_text_view {
-                  buffer: test_buffer;
+                  buffer: GtkSource.Buffer test_buffer {
+                    changed => $on_buffer_changed() swapped;
+                  };
                   wrap-mode: word_char;
                   hexpand: true;
                   vexpand: true;

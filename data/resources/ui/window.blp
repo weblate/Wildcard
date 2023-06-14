@@ -32,89 +32,91 @@ template $Window : Adw.ApplicationWindow {
         }
       }
 
-      Gtk.Box {
-        orientation: vertical;
-        hexpand: true;
-        vexpand: true;
-        margin-top: 6;
-        margin-bottom: 18;
-        margin-start: 18;
-        margin-end: 18;
-        spacing: 18;
-
-        Gtk.Box {
-          hexpand: true;
-
-          styles ["card", "text-box"]
-
-          Gtk.ScrolledWindow {
-            margin-top: 12;
-            margin-bottom: 12;
-            margin-start: 12;
-            margin-end: 12;
-
-            styles ["scrolled-window"]
-
-            Gtk.Overlay {
-              child: Gtk.TextView regex_text_view {
-                buffer: regex_buffer;
-                wrap-mode: word_char;
-                hexpand: true;
-              };
-
-              [overlay]
-              Gtk.Label regex_placeholder {
-                label: _("Type your regular expression here…");
-                ellipsize: end;
-                halign: start;
-                valign: start;
-                sensitive: false;
-              }
-            }
-          }
-        }
-
+      Adw.Clamp {
         Gtk.Box {
           orientation: vertical;
           hexpand: true;
           vexpand: true;
+          margin-top: 6;
+          margin-bottom: 18;
+          margin-start: 18;
+          margin-end: 18;
+          spacing: 18;
 
-          styles ["card", "text-box", "darker"]
+          Gtk.Box {
+            hexpand: true;
 
-          Gtk.ScrolledWindow {
-            margin-top: 12;
-            margin-bottom: 12;
-            margin-start: 12;
-            margin-end: 12;
+            styles ["card", "text-box"]
 
-            styles ["scrolled-window"]
+            Gtk.ScrolledWindow {
+              margin-top: 12;
+              margin-bottom: 12;
+              margin-start: 12;
+              margin-end: 12;
 
-            Gtk.Overlay {
-              child: Gtk.TextView test_text_view {
-                buffer: test_buffer;
-                wrap-mode: word_char;
-                hexpand: true;
-                vexpand: true;
-              };
+              styles ["scrolled-window"]
 
-              [overlay]
-              Gtk.Label test_placeholder {
-                label: _("Type your test string here…");
-                ellipsize: end;
-                halign: start;
-                valign: start;
-                sensitive: false;
+              Gtk.Overlay {
+                child: Gtk.TextView regex_text_view {
+                  buffer: regex_buffer;
+                  wrap-mode: word_char;
+                  hexpand: true;
+                };
+
+                [overlay]
+                Gtk.Label regex_placeholder {
+                  label: _("Type your regular expression here…");
+                  ellipsize: end;
+                  halign: start;
+                  valign: start;
+                  sensitive: false;
+                }
               }
             }
           }
 
-          Gtk.Label matches_label {
-            label: _("no matches");
-            halign: end;
-            margin-bottom: 6;
-            margin-end: 6;
+          Gtk.Box {
+            orientation: vertical;
+            hexpand: true;
+            vexpand: true;
 
-            styles ["dim-label"]
+            styles ["card", "text-box", "darker"]
+
+            Gtk.ScrolledWindow {
+              margin-top: 12;
+              margin-bottom: 12;
+              margin-start: 12;
+              margin-end: 12;
+
+              styles ["scrolled-window"]
+
+              Gtk.Overlay {
+                child: Gtk.TextView test_text_view {
+                  buffer: test_buffer;
+                  wrap-mode: word_char;
+                  hexpand: true;
+                  vexpand: true;
+                };
+
+                [overlay]
+                Gtk.Label test_placeholder {
+                  label: _("Type your test string here…");
+                  ellipsize: end;
+                  halign: start;
+                  valign: start;
+                  sensitive: false;
+                }
+              }
+            }
+
+            Gtk.Label matches_label {
+              label: _("no matches");
+              halign: end;
+              margin-bottom: 6;
+              margin-end: 6;
+
+              styles ["dim-label"]
+            }
           }
         }
       }

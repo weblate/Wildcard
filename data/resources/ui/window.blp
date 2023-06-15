@@ -48,6 +48,8 @@ template $Window : Adw.ApplicationWindow {
 
               Gtk.Overlay {
                 child: GtkSource.View regex_text_view {
+                  monospace: true;
+
                   buffer: GtkSource.Buffer regex_buffer {
                     changed => $on_buffer_changed() swapped;
                   };

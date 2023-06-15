@@ -13,12 +13,12 @@
 	  </key>
 
 	  <key name="last-regex" type="s">
-	    <default>''</default>
+	    <default>'[A-Z]\\w+'</default>
 	    <summary>Last regular expression insert</summary>
 	  </key>
 
 	  <key name="last-test" type="s">
-	    <default>''</default>
+	    <default>'Lorem ipsum dolor sit amet.'</default>
 	    <summary>Last test insert</summary>
 	  </key>
 

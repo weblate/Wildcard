@@ -22,15 +22,15 @@ mod imp {
         pub settings: gio::Settings,
 
         #[template_child]
-        pub regex_text_view: TemplateChild<sourceview5::View>,
+        pub regex_text_view: TemplateChild<gsv::View>,
         #[template_child]
         pub regex_placeholder: TemplateChild<gtk::Label>,
         #[template_child]
         pub test_placeholder: TemplateChild<gtk::Label>,
         #[template_child]
-        pub regex_buffer: TemplateChild<sourceview5::Buffer>,
+        pub regex_buffer: TemplateChild<gsv::Buffer>,
         #[template_child]
-        pub test_buffer: TemplateChild<sourceview5::Buffer>,
+        pub test_buffer: TemplateChild<gsv::Buffer>,
         #[template_child]
         pub matches_label: TemplateChild<gtk::Label>,
     }
@@ -202,7 +202,7 @@ impl Window {
 
         imp.regex_text_view.grab_focus();
 
-        let draw_spaces_tag = sourceview5::Tag::builder()
+        let draw_spaces_tag = gsv::Tag::builder()
             .name("draw-spaces")
             .draw_spaces(true)
             .build();

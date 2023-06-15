@@ -37,78 +37,50 @@ template $Window : Adw.ApplicationWindow {
           spacing: 18;
 
           Gtk.Box {
-            hexpand: true;
+            orientation: vertical;
 
             styles ["card", "text-box"]
 
-            Gtk.ScrolledWindow {
-              height-request: 82;
+            ScrolledWindow {
+              height-request: 84;
 
               styles ["scrolled-window"]
 
-              Gtk.Overlay {
-                child: GtkSource.View regex_text_view {
-                  monospace: true;
+              GtkSource.View regex_text_view {
+                wrap-mode: word_char;
+                monospace: true;
+                top-margin: 12;
+                bottom-margin: 12;
+                left-margin: 12;
+                right-margin: 12;
 
-                  buffer: GtkSource.Buffer regex_buffer {
-                    changed => $on_buffer_changed() swapped;
-                  };
-                  wrap-mode: word_char;
-                  hexpand: true;
-                  margin-top: 12;
-                  margin-bottom: 12;
-                  margin-start: 12;
-                  margin-end: 12;
+                buffer: GtkSource.Buffer regex_buffer {
+                  changed => $on_buffer_changed() swapped;
                 };
-
-                [overlay]
-                Gtk.Label regex_placeholder {
-                  label: _("Type your regular expression here…");
-                  ellipsize: end;
-                  halign: start;
-                  valign: start;
-                  margin-top: 12;
-                  margin-start: 12;
-                  sensitive: false;
-                }
               }
             }
           }
 
           Gtk.Box {
             orientation: vertical;
-            hexpand: true;
-            vexpand: true;
 
             styles ["card", "text-box", "darker"]
 
-            Gtk.ScrolledWindow {
+            ScrolledWindow {
+              vexpand: true;
+
               styles ["scrolled-window"]
 
-              Gtk.Overlay {
-                child: Gtk.TextView test_text_view {
-                  buffer: GtkSource.Buffer test_buffer {
-                    changed => $on_buffer_changed() swapped;
-                  };
-                  wrap-mode: word_char;
-                  hexpand: true;
-                  vexpand: true;
-                  margin-top: 12;
-                  margin-bottom: 12;
-                  margin-start: 12;
-                  margin-end: 12;
-                };
+              GtkSource.View test_text_view {
+                wrap-mode: word_char;
+                top-margin: 12;
+                bottom-margin: 12;
+                left-margin: 12;
+                right-margin: 12;
 
-                [overlay]
-                Gtk.Label test_placeholder {
-                  label: _("Type your test string here…");
-                  ellipsize: end;
-                  halign: start;
-                  valign: start;
-                  sensitive: false;
-                  margin-top: 12;
-                  margin-start: 12;
-                }
+                buffer: GtkSource.Buffer test_buffer {
+                  changed => $on_buffer_changed() swapped;
+                };
               }
             }
 

@@ -24,10 +24,6 @@ mod imp {
         #[template_child]
         pub regex_text_view: TemplateChild<gsv::View>,
         #[template_child]
-        pub regex_placeholder: TemplateChild<gtk::Label>,
-        #[template_child]
-        pub test_placeholder: TemplateChild<gtk::Label>,
-        #[template_child]
         pub regex_buffer: TemplateChild<gsv::Buffer>,
         #[template_child]
         pub test_buffer: TemplateChild<gsv::Buffer>,
@@ -41,8 +37,6 @@ mod imp {
                 settings: gio::Settings::new(APP_ID),
 
                 regex_text_view: TemplateChild::default(),
-                regex_placeholder: TemplateChild::default(),
-                test_placeholder: TemplateChild::default(),
                 regex_buffer: TemplateChild::default(),
                 test_buffer: TemplateChild::default(),
                 matches_label: TemplateChild::default(),
@@ -102,9 +96,6 @@ mod imp {
                 &self.test_buffer.end_iter(),
                 false,
             );
-
-            self.regex_placeholder.set_visible(regex_string.is_empty());
-            self.test_placeholder.set_visible(test_string.is_empty());
 
             let mut regex_parts = regex_string.split('/');
             let regex = regex_parts.next().unwrap_or_default();

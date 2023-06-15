@@ -30,68 +30,76 @@ template $Window : Adw.ApplicationWindow {
           orientation: vertical;
           hexpand: true;
           vexpand: true;
-          margin-top: 6;
+          margin-top: 0;
           margin-bottom: 18;
           margin-start: 18;
           margin-end: 18;
           spacing: 18;
 
-          Gtk.Box {
-            orientation: vertical;
+          Adw.PreferencesGroup {
+            title: _("Regex");
 
-            styles ["card", "text-box"]
+            Gtk.Box {
+              orientation: vertical;
 
-            ScrolledWindow {
-              height-request: 84;
+              styles ["card", "text-box"]
 
-              styles ["scrolled-window"]
+              ScrolledWindow {
+                height-request: 84;
 
-              GtkSource.View regex_text_view {
-                wrap-mode: word_char;
-                monospace: true;
-                top-margin: 12;
-                bottom-margin: 12;
-                left-margin: 12;
-                right-margin: 12;
+                styles ["scrolled-window"]
 
-                buffer: GtkSource.Buffer regex_buffer {
-                  changed => $on_buffer_changed() swapped;
-                };
+                GtkSource.View regex_text_view {
+                  wrap-mode: word_char;
+                  monospace: true;
+                  top-margin: 12;
+                  bottom-margin: 12;
+                  left-margin: 12;
+                  right-margin: 12;
+
+                  buffer: GtkSource.Buffer regex_buffer {
+                    changed => $on_buffer_changed() swapped;
+                  };
+                }
               }
             }
           }
 
-          Gtk.Box {
-            orientation: vertical;
+          Adw.PreferencesGroup {
+            title: _("Test String");
 
-            styles ["card", "text-box", "darker"]
+            Gtk.Box {
+              orientation: vertical;
 
-            ScrolledWindow {
-              vexpand: true;
+              styles ["card", "text-box", "darker"]
 
-              styles ["scrolled-window"]
+              ScrolledWindow {
+                vexpand: true;
 
-              GtkSource.View test_text_view {
-                wrap-mode: word_char;
-                top-margin: 12;
-                bottom-margin: 12;
-                left-margin: 12;
-                right-margin: 12;
+                styles ["scrolled-window"]
 
-                buffer: GtkSource.Buffer test_buffer {
-                  changed => $on_buffer_changed() swapped;
-                };
+                GtkSource.View test_text_view {
+                  wrap-mode: word_char;
+                  top-margin: 12;
+                  bottom-margin: 12;
+                  left-margin: 12;
+                  right-margin: 12;
+
+                  buffer: GtkSource.Buffer test_buffer {
+                    changed => $on_buffer_changed() swapped;
+                  };
+                }
               }
-            }
 
-            Gtk.Label matches_label {
-              label: _("no matches");
-              halign: end;
-              margin-top: 6;
-              margin-bottom: 6;
-              margin-end: 12;
+              Gtk.Label matches_label {
+                label: _("no matches");
+                halign: end;
+                margin-top: 6;
+                margin-bottom: 6;
+                margin-end: 12;
 
-              styles ["dim-label"]
+                styles ["dim-label"]
+              }
             }
           }
         }

@@ -26,7 +26,7 @@ mod imp {
         #[template_child]
         pub regex_buffer: TemplateChild<gsv::Buffer>,
         #[template_child]
-        pub test_buffer: TemplateChild<gsv::Buffer>,
+        pub test_buffer: TemplateChild<gtk::TextBuffer>,
         #[template_child]
         pub matches_label: TemplateChild<gtk::Label>,
     }

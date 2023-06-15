@@ -78,14 +78,14 @@ template $Window : Adw.ApplicationWindow {
 
                 styles ["scrolled-window"]
 
-                GtkSource.View test_text_view {
+                Gtk.TextView test_text_view {
                   wrap-mode: word_char;
                   top-margin: 12;
                   bottom-margin: 12;
                   left-margin: 12;
                   right-margin: 12;
 
-                  buffer: GtkSource.Buffer test_buffer {
+                  buffer: Gtk.TextBuffer test_buffer {
                     changed => $on_buffer_changed() swapped;
                   };
                 }

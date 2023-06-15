@@ -286,6 +286,15 @@ impl Window {
             .developers(vec!["Felipe Kinoshita <fkinoshita@gnome.org>"])
             .artists(vec!["kramo https://kramo.hu"])
             .copyright("© 2023 Felipe Kinoshita.")
+            .release_notes(&gettext("
+                <p>This is minor release of Wildcard brings important small quality-of-life improvements:</p>
+                <ul>
+                  <li>Visual enhancements to the overall layout and to the text boxes</li>
+                  <li>Italian translation</li>
+                </ul>
+                <p>Wildcard is made possible by volunteer developers, designers, and translators. Thank you for your contributions!</p>
+                <p>Feel free to report issues and ask for new features.</p>"
+            ))
             .build();
 
         dialog.present();

@@ -32,6 +32,17 @@
   <url type="donation">https://ko-fi.com/fkinoshita</url>
   <content_rating type="oars-1.0"/>
   <releases>
+    <release version="0.1.1" date="2023-06-14">
+      <description>
+        <p>This is minor release of Wildcard brings a bunch of small quality-of-life improvements:</p>
+        <ul>
+          <li>Visual enhancements to the overall layout and to the text boxes</li>
+          <li>Italian translation</li>
+        </ul>
+        <p>Wildcard is made possible by volunteer developers, designers, and translators. Thank you for your contributions!</p>
+        <p>Feel free to report issues and ask for new features.</p>
+      </description>
+    </release>
     <release version="0.1.0" date="2023-06-13">
       <description>
         <p>This is the first release of Wildcard, here are some available features:</p>

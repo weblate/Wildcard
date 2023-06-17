@@ -21,8 +21,6 @@ desktop_file_validate = find_program('desktop-file-validate', required: false)
 appstreamcli = find_program('appstreamcli', required: false)
 cargo = find_program('cargo', required: true)
 
-version = meson.project_version()
-
 prefix = get_option('prefix')
 bindir = prefix / get_option('bindir')
 localedir = prefix / get_option('localedir')

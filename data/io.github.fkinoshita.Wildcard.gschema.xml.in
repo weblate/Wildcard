@@ -3,12 +3,12 @@
 	<schema id="@app-id@" path="/io/github/fkinoshita/Wildcard/">
 
 	  <key name="window-width" type="i">
-	    <default>340</default>
+	    <default>450</default>
 	    <summary>Window width</summary>
 	  </key>
 
 	  <key name="window-height" type="i">
-	    <default>550</default>
+	    <default>570</default>
 	    <summary>Window height</summary>
 	  </key>
 

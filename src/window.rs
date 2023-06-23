@@ -22,11 +22,10 @@ mod imp {
         pub settings: gio::Settings,
 
         #[template_child]
-        pub regex_text_view: TemplateChild<gsv::View>,
-        #[template_child]
-        pub regex_buffer: TemplateChild<gsv::Buffer>,
-        #[template_child]
         pub test_buffer: TemplateChild<gtk::TextBuffer>,
+        #[template_child]
+        pub regex_row: TemplateChild<adw::EntryRow>,
+
         #[template_child]
         pub matches_label: TemplateChild<gtk::Label>,
     }
@@ -36,9 +35,9 @@ mod imp {
             Self {
                 settings: gio::Settings::new(APP_ID),
 
-                regex_text_view: TemplateChild::default(),
-                regex_buffer: TemplateChild::default(),
                 test_buffer: TemplateChild::default(),
+                regex_row: TemplateChild::default(),
+
                 matches_label: TemplateChild::default(),
             }
         }
@@ -83,14 +82,8 @@ mod imp {
     #[gtk::template_callbacks]
     impl Window {
         #[template_callback]
-        fn on_buffer_changed(&self, _text_buffer: &gtk::TextBuffer) {
-            self.regex_buffer.apply_tag_by_name("draw-spaces", &self.regex_buffer.start_iter(), &self.regex_buffer.end_iter());
-
-            let regex_string = self.regex_buffer.text(
-                &self.regex_buffer.start_iter(),
-                &self.regex_buffer.end_iter(),
-                false,
-            );
+        fn on_buffer_changed(&self) {
+            let regex_string = self.regex_row.text();
             let test_string = self.test_buffer.text(
                 &self.test_buffer.start_iter(),
                 &self.test_buffer.end_iter(),
@@ -191,14 +184,7 @@ impl Window {
     fn setup_text_views(&self) {
         let imp = self.imp();
 
-        imp.regex_text_view.grab_focus();
-
-        let draw_spaces_tag = gsv::Tag::builder()
-            .name("draw-spaces")
-            .draw_spaces(true)
-            .build();
-
-        imp.regex_buffer.tag_table().add(&draw_spaces_tag);
+        imp.regex_row.grab_focus();
 
         imp.test_buffer.create_tag(
             Some("marked_first"),
@@ -215,11 +201,7 @@ impl Window {
     fn save_regex_state(&self) -> Result<(), glib::BoolError> {
         let imp = self.imp();
 
-        let regex_string = imp.regex_buffer.text(
-            &imp.regex_buffer.start_iter(),
-            &imp.regex_buffer.end_iter(),
-            false,
-        );
+        let regex_string = imp.regex_row.text();
         let test_string = imp.test_buffer.text(
             &imp.test_buffer.start_iter(),
             &imp.test_buffer.end_iter(),
@@ -238,7 +220,7 @@ impl Window {
         let regex_string = imp.settings.string("last-regex");
         let test_string = imp.settings.string("last-test");
 
-        imp.regex_buffer.set_text(&regex_string);
+        imp.regex_row.set_text(&regex_string);
         imp.test_buffer.set_text(&test_string);
     }
 

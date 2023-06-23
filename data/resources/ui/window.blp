@@ -4,8 +4,8 @@ using GtkSource 5;
 
 template $Window : Adw.ApplicationWindow {
   title: _("Wildcard");
-  default-width: 340;
-  default-height: 550;
+  default-width: 450;
+  default-height: 570;
   width-request: 300;
   height-request: 250;
 
@@ -37,49 +37,27 @@ template $Window : Adw.ApplicationWindow {
           spacing: 18;
 
           Adw.PreferencesGroup {
-            title: _("Regex");
-
-            Gtk.Box {
-              orientation: vertical;
-
-              styles ["card", "text-box"]
-
-              ScrolledWindow {
-                height-request: 84;
-
-                styles ["scrolled-window"]
-
-                GtkSource.View regex_text_view {
-                  wrap-mode: word_char;
-                  monospace: true;
-                  top-margin: 12;
-                  bottom-margin: 12;
-                  left-margin: 12;
-                  right-margin: 12;
-
-                  buffer: GtkSource.Buffer regex_buffer {
-                    changed => $on_buffer_changed() swapped;
-                  };
-                }
-              }
-            }
-          }
-
-          Adw.PreferencesGroup {
             title: _("Test String");
 
             Gtk.Box {
               orientation: vertical;
+              hexpand: true;
+              vexpand: true;
 
-              styles ["card", "text-box", "darker"]
+              styles ["card", "text-box"]
 
-              ScrolledWindow {
+              Gtk.ScrolledWindow {
+                hexpand: true;
                 vexpand: true;
+                height-request: 160;
 
                 styles ["scrolled-window"]
 
-                Gtk.TextView test_text_view {
+                Gtk.TextView {
+                  monospace: true;
                   wrap-mode: word_char;
+                  hexpand: true;
+                  vexpand: true;
                   top-margin: 12;
                   bottom-margin: 12;
                   left-margin: 12;
@@ -100,6 +78,16 @@ template $Window : Adw.ApplicationWindow {
 
                 styles ["dim-label"]
               }
+            }
+          }
+
+          Adw.PreferencesGroup {
+            title: _("Options");
+
+            Adw.EntryRow regex_row {
+              title: _("Regular Expression");
+
+              changed => $on_buffer_changed() swapped;
             }
           }
         }

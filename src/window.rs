@@ -3,7 +3,7 @@
 use regex::{Regex, RegexBuilder};
 
 use adw::subclass::prelude::*;
-use gtk::prelude::*;
+use adw::prelude::*;
 use gtk::{gio, glib};
 
 use gettextrs::gettext;
@@ -24,10 +24,15 @@ mod imp {
         #[template_child]
         pub test_buffer: TemplateChild<gtk::TextBuffer>,
         #[template_child]
-        pub regex_row: TemplateChild<adw::EntryRow>,
-
-        #[template_child]
         pub matches_label: TemplateChild<gtk::Label>,
+        #[template_child]
+        pub mode_combo_row: TemplateChild<adw::ComboRow>,
+        #[template_child]
+        pub regex_row: TemplateChild<adw::EntryRow>,
+        #[template_child]
+        pub replacement_row: TemplateChild<adw::EntryRow>,
+        #[template_child]
+        pub apply_button: TemplateChild<gtk::Button>,
     }
 
     impl Default for Window {
@@ -36,9 +41,11 @@ mod imp {
                 settings: gio::Settings::new(APP_ID),
 
                 test_buffer: TemplateChild::default(),
-                regex_row: TemplateChild::default(),
-
                 matches_label: TemplateChild::default(),
+                mode_combo_row: TemplateChild::default(),
+                regex_row: TemplateChild::default(),
+                replacement_row: TemplateChild::default(),
+                apply_button: TemplateChild::default(),
             }
         }
     }
@@ -73,7 +80,7 @@ mod imp {
                 obj.add_css_class("devel");
             }
 
-            obj.setup_text_views();
+            obj.setup();
             obj.load_regex_state();
             obj.load_window_size();
         }
@@ -145,6 +152,65 @@ mod imp {
                 &[("matches", &captures.to_string())],
             ));
         }
+
+        #[template_callback]
+        fn on_mode_changed(&self) {
+            let selected = self.mode_combo_row.selected();
+
+            if selected == 0 {
+                self.replacement_row.set_sensitive(false);
+                self.apply_button.set_sensitive(false);
+                return;
+            }
+
+            self.replacement_row.set_sensitive(true);
+            self.apply_button.set_sensitive(true);
+        }
+
+        #[template_callback]
+        fn on_apply_button_clicked(&self, _button: &gtk::Button) {
+            let selected = self.mode_combo_row.selected();
+
+            let regex_string = self.regex_row.text();
+            let test_string = self.test_buffer.text(
+                &self.test_buffer.start_iter(),
+                &self.test_buffer.end_iter(),
+                false,
+            );
+
+            let re: Regex = RegexBuilder::new(&regex_string)
+                .build()
+                .unwrap_or(Regex::new(r"").unwrap());
+
+            self.test_buffer
+                .remove_all_tags(&self.test_buffer.start_iter(), &self.test_buffer.end_iter());
+
+            self.test_buffer.begin_user_action();
+
+            match selected {
+                1 => {
+                    for (_, caps) in re.captures_iter(&test_string).enumerate() {
+                        let m = caps.get(0).unwrap();
+
+                        if m.is_empty() {
+                            continue;
+                        }
+
+                        let mut start_iter = self.test_buffer.start_iter();
+                        start_iter.set_offset(m.start() as i32);
+
+                        let mut end_iter = self.test_buffer.start_iter();
+                        end_iter.set_offset(m.end() as i32);
+
+                        self.test_buffer.delete(&mut start_iter, &mut end_iter);
+                        self.test_buffer.insert(&mut start_iter, &self.replacement_row.text());
+                    }
+                },
+                _ => (),
+            }
+
+            self.test_buffer.end_user_action();
+        }
     }
 
     impl WidgetImpl for Window {}
@@ -181,8 +247,11 @@ impl Window {
             .build()
     }
 
-    fn setup_text_views(&self) {
+    fn setup(&self) {
         let imp = self.imp();
+
+        let modes_model = gtk::StringList::new(&[&gettext("Match"), &gettext("Substitution")]);
+        imp.mode_combo_row.set_model(Some(&modes_model));
 
         imp.regex_row.grab_focus();
 

@@ -84,11 +84,31 @@ template $Window : Adw.ApplicationWindow {
           Adw.PreferencesGroup {
             title: _("Options");
 
+            Adw.ComboRow mode_combo_row {
+              title: _("Mode");
+
+              notify::selected => $on_mode_changed() swapped;
+            }
+
             Adw.EntryRow regex_row {
               title: _("Regular Expression");
 
               changed => $on_buffer_changed() swapped;
             }
+
+            Adw.EntryRow replacement_row {
+              title: _("Replacement String");
+            }
+          }
+
+          Gtk.Button apply_button {
+            sensitive: false;
+            label: _("Apply");
+            halign: center;
+
+            styles ["suggested-action", "pill"]
+
+            clicked => $on_apply_button_clicked() swapped;
           }
         }
       }

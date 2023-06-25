@@ -87,6 +87,8 @@ template $Window : Adw.ApplicationWindow {
               title: _("Regular Expression");
 
               changed => $on_buffer_changed() swapped;
+
+              styles ["monospace"]
             }
 
             Adw.ActionRow flags_row {

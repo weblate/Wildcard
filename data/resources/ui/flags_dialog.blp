@@ -36,87 +36,91 @@ template $FlagsDialog : Adw.Window {
           styles ["title-1"]
         }
 
-        Adw.PreferencesGroup {
-          hexpand: true;
-          vexpand: true;
+        Adw.Clamp {
+          maximum-size: 450;
 
-          Adw.ActionRow {
-            title: _("Multiline");
-            activatable-widget: multiline_switch;
+          Adw.PreferencesGroup {
+            hexpand: true;
+            vexpand: true;
 
-            // activated => $on_multiline_activated() swapped;
+            Adw.ActionRow {
+              title: _("Multiline");
+              activatable-widget: multiline_switch;
 
-            [suffix]
-            Gtk.Switch multiline_switch {
-              can-focus: false;
-              valign: center;
+              // activated => $on_multiline_activated() swapped;
 
-              notify::state => $on_multiline_changed() swapped;
+              [suffix]
+              Gtk.Switch multiline_switch {
+                can-focus: false;
+                valign: center;
+
+                notify::state => $on_multiline_changed() swapped;
+              }
             }
-          }
 
-          Adw.ActionRow {
-            title: _("Case Insensitive");
-            activatable-widget: case_insensitive_switch;
+            Adw.ActionRow {
+              title: _("Case Insensitive");
+              activatable-widget: case_insensitive_switch;
 
-            [suffix]
-            Gtk.Switch case_insensitive_switch {
-              can-focus: false;
-              valign: center;
+              [suffix]
+              Gtk.Switch case_insensitive_switch {
+                can-focus: false;
+                valign: center;
 
-              notify::state => $on_case_insensitive_changed() swapped;
+                notify::state => $on_case_insensitive_changed() swapped;
+              }
             }
-          }
 
-          Adw.ActionRow {
-            title: _("Ignore Whitespace");
-            activatable-widget: ignore_whitespace_switch;
+            Adw.ActionRow {
+              title: _("Ignore Whitespace");
+              activatable-widget: ignore_whitespace_switch;
 
-            [suffix]
-            Gtk.Switch ignore_whitespace_switch {
-              can-focus: false;
-              valign: center;
+              [suffix]
+              Gtk.Switch ignore_whitespace_switch {
+                can-focus: false;
+                valign: center;
 
-              notify::state => $on_ignore_whitespace_changed() swapped;
+                notify::state => $on_ignore_whitespace_changed() swapped;
+              }
             }
-          }
 
-          Adw.ActionRow {
-            title: _("Dot Matches Newline");
-            activatable-widget: dot_matches_newline_switch;
+            Adw.ActionRow {
+              title: _("Dot Matches Newline");
+              activatable-widget: dot_matches_newline_switch;
 
-            [suffix]
-            Gtk.Switch dot_matches_newline_switch {
-              can-focus: false;
-              valign: center;
+              [suffix]
+              Gtk.Switch dot_matches_newline_switch {
+                can-focus: false;
+                valign: center;
 
-              notify::state => $on_dot_matches_newline_changed() swapped;
+                notify::state => $on_dot_matches_newline_changed() swapped;
+              }
             }
-          }
 
-          Adw.ActionRow {
-            title: _("Unicode");
-            activatable-widget: unicode_switch;
+            Adw.ActionRow {
+              title: _("Unicode");
+              activatable-widget: unicode_switch;
 
-            [suffix]
-            Gtk.Switch unicode_switch {
-              can-focus: false;
-              valign: center;
+              [suffix]
+              Gtk.Switch unicode_switch {
+                can-focus: false;
+                valign: center;
 
-              notify::state => $on_unicode_changed() swapped;
+                notify::state => $on_unicode_changed() swapped;
+              }
             }
-          }
 
-          Adw.ActionRow {
-            title: _("Swap Greed");
-            activatable-widget: greed_switch;
+            Adw.ActionRow {
+              title: _("Swap Greed");
+              activatable-widget: greed_switch;
 
-            [suffix]
-            Gtk.Switch greed_switch {
-              can-focus: false;
-              valign: center;
+              [suffix]
+              Gtk.Switch greed_switch {
+                can-focus: false;
+                valign: center;
 
-              notify::state => $on_greed_changed() swapped;
+                notify::state => $on_greed_changed() swapped;
+              }
             }
           }
         }

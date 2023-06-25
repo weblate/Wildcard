@@ -22,5 +22,35 @@
 	    <summary>Last test insert</summary>
 	  </key>
 
+	  <key name="multiline-flag" type="b">
+	    <default>true</default>
+	    <summary>Use the multiline flag</summary>
+	  </key>
+
+	  <key name="case-insensitive-flag" type="b">
+	    <default>false</default>
+	    <summary>Use the case insensitive flag</summary>
+	  </key>
+
+	  <key name="ignore-whitespace-flag" type="b">
+	    <default>false</default>
+	    <summary>Use the ignore whitespace flag</summary>
+	  </key>
+
+	  <key name="dot-matches-newline-flag" type="b">
+	    <default>false</default>
+	    <summary>Use the dot matches newline flag</summary>
+	  </key>
+
+	  <key name="unicode-flag" type="b">
+	    <default>false</default>
+	    <summary>Use the unicode flag</summary>
+	  </key>
+
+	  <key name="greed-flag" type="b">
+	    <default>false</default>
+	    <summary>Use the greed flag</summary>
+	  </key>
+
 	</schema>
 </schemalist>

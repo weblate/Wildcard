@@ -1,0 +1,131 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $FlagsDialog : Adw.Window {
+  title: _("Flags");
+  default-width: 350;
+  default-height: 400;
+
+  content: Adw.ToastOverlay {
+    child: Gtk.Box {
+      orientation: vertical;
+
+      Adw.HeaderBar {
+        title-widget: Adw.WindowTitle {
+          title: "";
+        };
+
+        styles ["flat"]
+      }
+
+      Gtk.Box {
+        orientation: vertical;
+        hexpand: true;
+        vexpand: true;
+        margin-top: 0;
+        margin-bottom: 18;
+        margin-start: 18;
+        margin-end: 18;
+        spacing: 18;
+
+        Gtk.Label {
+          label: _("Flags");
+
+          styles ["title-1"]
+        }
+
+        Adw.PreferencesGroup {
+          hexpand: true;
+          vexpand: true;
+
+          Adw.ActionRow {
+            title: _("Multiline");
+            activatable-widget: multiline_switch;
+
+            // activated => $on_multiline_activated() swapped;
+
+            [suffix]
+            Gtk.Switch multiline_switch {
+              can-focus: false;
+              valign: center;
+
+              notify::state => $on_multiline_changed() swapped;
+            }
+          }
+
+          Adw.ActionRow {
+            title: _("Case Insensitive");
+            activatable-widget: case_insensitive_switch;
+
+            [suffix]
+            Gtk.Switch case_insensitive_switch {
+              can-focus: false;
+              valign: center;
+
+              notify::state => $on_case_insensitive_changed() swapped;
+            }
+          }
+
+          Adw.ActionRow {
+            title: _("Ignore Whitespace");
+            activatable-widget: ignore_whitespace_switch;
+
+            [suffix]
+            Gtk.Switch ignore_whitespace_switch {
+              can-focus: false;
+              valign: center;
+
+              notify::state => $on_ignore_whitespace_changed() swapped;
+            }
+          }
+
+          Adw.ActionRow {
+            title: _("Dot Matches Newline");
+            activatable-widget: dot_matches_newline_switch;
+
+            [suffix]
+            Gtk.Switch dot_matches_newline_switch {
+              can-focus: false;
+              valign: center;
+
+              notify::state => $on_dot_matches_newline_changed() swapped;
+            }
+          }
+
+          Adw.ActionRow {
+            title: _("Unicode");
+            activatable-widget: unicode_switch;
+
+            [suffix]
+            Gtk.Switch unicode_switch {
+              can-focus: false;
+              valign: center;
+
+              notify::state => $on_unicode_changed() swapped;
+            }
+          }
+
+          Adw.ActionRow {
+            title: _("Swap Greed");
+            activatable-widget: greed_switch;
+
+            [suffix]
+            Gtk.Switch greed_switch {
+              can-focus: false;
+              valign: center;
+
+              notify::state => $on_greed_changed() swapped;
+            }
+          }
+        }
+      }
+    };
+  };
+
+  Gtk.ShortcutController {
+    Gtk.Shortcut {
+      trigger: "Escape";
+      action: "action(window.close)";
+    }
+  }
+}

@@ -21,6 +21,7 @@
 mod application;
 mod config;
 mod i18n;
+mod flags_dialog;
 mod window;
 
 use gettextrs::{gettext, LocaleCategory};

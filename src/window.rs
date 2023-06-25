@@ -12,6 +12,7 @@ use crate::i18n::ngettext_f;
 
 use crate::application::Application;
 use crate::config::{APP_ID, PROFILE, VERSION};
+use crate::flags_dialog::FlagsDialog;
 
 mod imp {
     use super::*;
@@ -90,17 +91,13 @@ mod imp {
                 false,
             );
 
-            let mut regex_parts = regex_string.split('/');
-            let regex = regex_parts.next().unwrap_or_default();
-            let flags = regex_parts.next().unwrap_or_default();
-
-            let re: Regex = RegexBuilder::new(regex)
-                .multi_line(flags.contains('m'))
-                .case_insensitive(flags.contains('i'))
-                .ignore_whitespace(flags.contains('x'))
-                .dot_matches_new_line(flags.contains('s'))
-                .unicode(flags.contains('u'))
-                .swap_greed(flags.contains('U'))
+            let re: Regex = RegexBuilder::new(&regex_string)
+                .multi_line(self.settings.boolean("multiline-flag"))
+                .case_insensitive(self.settings.boolean("case-insensitive-flag"))
+                .ignore_whitespace(self.settings.boolean("ignore-whitespace-flag"))
+                .dot_matches_new_line(self.settings.boolean("dot-matches-newline-flag"))
+                .unicode(self.settings.boolean("unicode-flag"))
+                .swap_greed(self.settings.boolean("greed-flag"))
                 .build()
                 .unwrap_or(Regex::new(r"").unwrap());
 
@@ -133,7 +130,7 @@ mod imp {
                 captures += 1;
             }
 
-            if regex.is_empty() || captures == 0 {
+            if regex_string.is_empty() || captures == 0 {
                 self.matches_label.set_label(&gettext("no matches"));
                 return;
             }
@@ -144,6 +141,11 @@ mod imp {
                 captures,
                 &[("matches", &captures.to_string())],
             ));
+        }
+
+        #[template_callback]
+        fn on_flags_row_activated(&self) {
+            self.obj().show_flags_dialog();
         }
     }
 
@@ -242,6 +244,25 @@ impl Window {
         let height = imp.settings.int("window-height");
 
         self.set_default_size(width, height);
+    }
+
+    fn show_flags_dialog(&self) {
+        let dialog = FlagsDialog::new();
+
+        dialog.connect_local(
+            "flags-changed",
+            false,
+            glib::clone!(@strong self as this => move |_| {
+                this.imp().test_buffer.emit_by_name::<()>("changed", &[]);
+
+                None
+            }
+        ));
+
+        dialog.set_transient_for(Some(self));
+        dialog.set_modal(true);
+
+        dialog.present();
     }
 
     fn show_about_dialog(&self) {

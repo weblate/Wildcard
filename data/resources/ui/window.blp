@@ -89,6 +89,18 @@ template $Window : Adw.ApplicationWindow {
 
               changed => $on_buffer_changed() swapped;
             }
+
+            Adw.ActionRow flags_row {
+              title: _("Flags");
+              activatable: true;
+
+              activated => $on_flags_row_activated() swapped;
+
+              [suffix]
+              Gtk.Image {
+                icon-name: "go-next-symbolic";
+              }
+            }
           }
         }
       }

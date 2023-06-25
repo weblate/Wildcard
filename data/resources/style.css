@@ -14,8 +14,3 @@
   background: linear-gradient(to top, alpha(@shade_color, .75), transparent 4px);
 }
 
-.darker {
-  background-color: @card_shade_color;
-  color: @card_fg_color;
-}
-

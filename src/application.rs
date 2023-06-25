@@ -44,8 +44,6 @@ mod imp {
             self.parent_startup();
             let app = self.obj();
 
-            gsv::init();
-
             gtk::Window::set_default_icon_name(APP_ID);
 
             app.setup_gactions();

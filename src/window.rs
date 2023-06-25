@@ -147,6 +147,11 @@ mod imp {
         fn on_flags_row_activated(&self) {
             self.obj().show_flags_dialog();
         }
+
+        #[template_callback]
+        fn on_info_button_clicked(&self) {
+            self.obj().show_info_dialog();
+        }
     }
 
     impl WidgetImpl for Window {}
@@ -258,6 +263,16 @@ impl Window {
                 None
             }
         ));
+
+        dialog.set_transient_for(Some(self));
+        dialog.set_modal(true);
+
+        dialog.present();
+    }
+
+    fn show_info_dialog(&self) {
+        let builder = gtk::Builder::from_resource("/io/github/fkinoshita/Wildcard/ui/info_dialog.ui");
+        let dialog: adw::Window = builder.object("info_dialog").unwrap();
 
         dialog.set_transient_for(Some(self));
         dialog.set_modal(true);

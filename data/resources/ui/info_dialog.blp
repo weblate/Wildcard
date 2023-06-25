@@ -1,0 +1,43 @@
+using Gtk 4.0;
+using Adw 1;
+
+Adw.Window info_dialog {
+  title: "";
+  default-width: 350;
+  default-height: 400;
+  resizable: false;
+
+  content: Box {
+    vexpand: true;
+    orientation: vertical;
+
+    Adw.HeaderBar {
+      styles ["flat"]
+    }
+
+    Box container {
+      vexpand: true;
+      orientation: vertical;
+
+      Adw.StatusPage {
+        title: _("Regex Flavor");
+        description: _("Wildcard syntax is similar to Perl-style regular expressions, but lacks a few features like look around and backreferences.");
+        icon-name: "io.github.fkinoshita.Wildcard";
+        hexpand: true;
+        vexpand: true;
+        margin-bottom: 48;
+        margin-start: 18;
+        margin-end: 18;
+
+        styles ["compact"]
+      }
+    }
+  };
+
+  Gtk.ShortcutController {
+    Gtk.Shortcut {
+      trigger: "Escape";
+      action: "action(window.close)";
+    }
+  }
+}

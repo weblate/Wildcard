@@ -89,6 +89,17 @@ template $Window : Adw.ApplicationWindow {
               changed => $on_buffer_changed() swapped;
 
               styles ["monospace"]
+
+              [suffix]
+              Gtk.Button {
+                tooltip-text: _("Regex Flavor");
+                icon-name: "dialog-information-symbolic";
+                valign: center;
+
+                clicked => $on_info_button_clicked() swapped;
+
+                styles ["flat", "circular"]
+              }
             }
 
             Adw.ActionRow flags_row {

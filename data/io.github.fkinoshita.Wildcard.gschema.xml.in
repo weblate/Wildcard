@@ -43,7 +43,7 @@
 	  </key>
 
 	  <key name="unicode-flag" type="b">
-	    <default>false</default>
+	    <default>true</default>
 	    <summary>Use the unicode flag</summary>
 	  </key>
 

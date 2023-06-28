@@ -297,11 +297,10 @@ impl Window {
             .artists(vec!["kramo https://kramo.hu"])
             .copyright("© 2023 Felipe Kinoshita.")
             .release_notes(gettext("
-                <p>This is minor release of Wildcard brings much needed fixes and improvements:</p>
+                <p>This major release of Wildcard brings big changes:</p>
                 <ul>
-                  <li>Fixed scrolling issues on the text views</li>
-                  <li>Add label to text views to make their purpose clearer</li>
-                  <li>French translation</li>
+                  <li>A more streamlined layout for a better experience</li>
+                  <li>A nice dialog for quickly switching expression flags on/off</li>
                 </ul>
                 <p>Wildcard is made possible by volunteer developers, designers, and translators. Thank you for your contributions!</p>
                 <p>Feel free to report issues and ask for new features.</p>"

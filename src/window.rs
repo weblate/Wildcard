@@ -18,7 +18,7 @@ mod imp {
     use super::*;
 
     #[derive(Debug, gtk::CompositeTemplate)]
-    #[template(resource = "/io/github/fkinoshita/Wildcard/ui/window.ui")]
+    #[template(resource = "/com/felipekinoshita/Wildcard/ui/window.ui")]
     pub struct Window {
         pub settings: gio::Settings,
 
@@ -272,7 +272,7 @@ impl Window {
     }
 
     fn show_info_dialog(&self) {
-        let builder = gtk::Builder::from_resource("/io/github/fkinoshita/Wildcard/ui/info_dialog.ui");
+        let builder = gtk::Builder::from_resource("/com/felipekinoshita/Wildcard/ui/info_dialog.ui");
         let dialog: adw::Window = builder.object("info_dialog").unwrap();
 
         dialog.set_transient_for(Some(self));

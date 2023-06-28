@@ -1,4 +1,4 @@
-application_id = 'io.github.fkinoshita.Wildcard'
+application_id = 'com.felipekinoshita.Wildcard'
 
 if get_option('profile') == 'development'
   application_id = '@0@.Devel'.format(application_id)
@@ -12,6 +12,6 @@ install_data(
 
 symbolic_dir = join_paths('hicolor', 'symbolic', 'apps')
 install_data(
-  join_paths(symbolic_dir, ('io.github.fkinoshita.Wildcard-symbolic.svg')),
+  join_paths(symbolic_dir, ('com.felipekinoshita.Wildcard-symbolic.svg')),
   install_dir: join_paths(get_option('datadir'), 'icons', symbolic_dir)
 )

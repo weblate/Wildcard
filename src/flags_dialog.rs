@@ -14,7 +14,7 @@ mod imp {
     use super::*;
 
     #[derive(Debug, gtk::CompositeTemplate)]
-    #[template(resource = "/io/github/fkinoshita/Wildcard/ui/flags_dialog.ui")]
+    #[template(resource = "/com/felipekinoshita/Wildcard/ui/flags_dialog.ui")]
     pub struct FlagsDialog {
         pub settings: gio::Settings,
 

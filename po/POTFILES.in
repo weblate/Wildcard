@@ -1,6 +1,6 @@
-data/io.github.fkinoshita.Wildcard.desktop.in.in
-data/io.github.fkinoshita.Wildcard.gschema.xml.in
-data/io.github.fkinoshita.Wildcard.metainfo.xml.in.in
+data/com.felipekinoshita.Wildcard.desktop.in.in
+data/com.felipekinoshita.Wildcard.gschema.xml.in
+data/com.felipekinoshita.Wildcard.metainfo.xml.in.in
 data/resources/ui/shortcuts.ui
 data/resources/ui/window.blp
 src/main.rs

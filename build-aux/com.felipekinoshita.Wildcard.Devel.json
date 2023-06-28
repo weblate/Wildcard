@@ -1,5 +1,5 @@
 {
-    "id" : "io.github.fkinoshita.Wildcard.Devel",
+    "id" : "com.felipekinoshita.Wildcard.Devel",
     "runtime" : "org.gnome.Platform",
     "runtime-version" : "44",
     "sdk" : "org.gnome.Sdk",

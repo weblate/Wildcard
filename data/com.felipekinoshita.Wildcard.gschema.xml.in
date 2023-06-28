@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schemalist gettext-domain="wildcard">
-	<schema id="@app-id@" path="/io/github/fkinoshita/Wildcard/">
+	<schema id="@app-id@" path="/com/felipekinoshita/Wildcard/">
 
 	  <key name="window-width" type="i">
 	    <default>415</default>

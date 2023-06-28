@@ -17,27 +17,27 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: data/io.github.fkinoshita.Wildcard.desktop.in.in:3
-#: data/io.github.fkinoshita.Wildcard.metainfo.xml.in.in:6 src/main.rs:41
+#: data/com.felipekinoshita.Wildcard.desktop.in.in:3
+#: data/com.felipekinoshita.Wildcard.metainfo.xml.in.in:6 src/main.rs:41
 #: src/window.rs:264
 msgid "Wildcard"
 msgstr ""
 
-#: data/io.github.fkinoshita.Wildcard.desktop.in.in:4
-#: data/io.github.fkinoshita.Wildcard.metainfo.xml.in.in:7 src/window.rs:266
+#: data/com.felipekinoshita.Wildcard.desktop.in.in:4
+#: data/com.felipekinoshita.Wildcard.metainfo.xml.in.in:7 src/window.rs:266
 msgid "Test your regular expressions"
 msgstr ""
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/io.github.fkinoshita.Wildcard.desktop.in.in:12
+#: data/com.felipekinoshita.Wildcard.desktop.in.in:12
 msgid "regex;regular;expressions;"
 msgstr ""
 
-#: data/io.github.fkinoshita.Wildcard.metainfo.xml.in.in:8
+#: data/com.felipekinoshita.Wildcard.metainfo.xml.in.in:8
 msgid "Felipe Kinoshita"
 msgstr "Felipe Kinoshita"
 
-#: data/io.github.fkinoshita.Wildcard.metainfo.xml.in.in:13
+#: data/com.felipekinoshita.Wildcard.metainfo.xml.in.in:13
 msgid ""
 "Wildcard gives you a nice and simple to use interface to test/practice "
 "regular expressions."

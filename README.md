@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="data/icons/hicolor/scalable/apps/io.github.fkinoshita.Wildcard.svg" alt="Wildcard Icon" width="192" height="192"/>
+  <img src="data/icons/hicolor/scalable/apps/com.felipekinoshita.Wildcard.svg" alt="Wildcard Icon" width="192" height="192"/>
   <br>
   Wildcard
 </h1>
@@ -7,15 +7,15 @@
 <p align="center"><strong>Test your regular expressions</strong></p>
 
 <p align="center">
-  <a href="https://flathub.org/apps/details/io.github.fkinoshita.Wildcard">
+  <a href="https://flathub.org/apps/details/com.felipekinoshita.Wildcard">
     <img width="200" alt="Download on Flathub" src="https://flathub.org/assets/badges/flathub-badge-en.svg"/>
   </a>
   <br>
 </p>
 
 <p align="center">
-  <a href="https://flathub.org/apps/details/io.github.fkinoshita.Wildcard">
-    <img alt="Flathub downloads" src="https://img.shields.io/badge/dynamic/json?color=informational&label=downloads&logo=flathub&logoColor=white&query=%24.installs_total&url=https%3A%2F%2Fflathub.org%2Fapi%2Fv2%2Fstats%2Fio.github.fkinoshita.Wildcard"/>
+  <a href="https://flathub.org/apps/details/com.felipekinoshita.Wildcard">
+    <img alt="Flathub downloads" src="https://img.shields.io/badge/dynamic/json?color=informational&label=downloads&logo=flathub&logoColor=white&query=%24.installs_total&url=https%3A%2F%2Fflathub.org%2Fapi%2Fv2%2Fstats%2Fcom.felipekinoshita.Wildcard"/>
   </a>
 </p>
 

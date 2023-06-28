@@ -65,7 +65,7 @@ impl Default for Application {
     fn default() -> Self {
         glib::Object::builder()
             .property("application-id", APP_ID)
-            .property("resource-base-path", "/io/github/fkinoshita/Wildcard/")
+            .property("resource-base-path", "/com/felipekinoshita/Wildcard/")
             .build()
     }
 }

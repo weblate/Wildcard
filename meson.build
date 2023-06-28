@@ -9,7 +9,7 @@ project(
 i18n = import('i18n')
 gnome = import('gnome')
 
-base_id = 'io.github.fkinoshita.Wildcard'
+base_id = 'com.felipekinoshita.Wildcard'
 
 dependency('gtk4', version: '>=4.10')
 dependency('libadwaita-1', version: '>=1.3')

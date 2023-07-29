@@ -30,6 +30,7 @@
   <url type="homepage">https://github.com/fkinoshita/Wildcard</url>
   <url type="bugtracker">https://github.com/fkinoshita/Wildcard/issues</url>
   <url type="donation">https://ko-fi.com/fkinoshita</url>
+  <url type="translate">https://hosted.weblate.org/engage/wildcard</url>
   <content_rating type="oars-1.0"/>
   <releases>
     <release version="0.2.0" date="2023-06-27">

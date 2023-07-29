@@ -26,6 +26,10 @@
 
 Wildcard gives you a nice and simple to use interface to test/practice regular expressions.
 
+## Translation
+
+If you'd likde to help translating Wildcard into your language, please head over to [Weblate](https://hosted.weblate.org/engage/Wildcard).
+
 ## CI Build (Not recommended)
 
 If you want to quickly test Wildcard you can grab the latest CI build [here](https://nightly.link/fkinoshita/Wildcard/workflows/flatpak/main).

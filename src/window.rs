@@ -297,10 +297,9 @@ impl Window {
             .artists(vec!["kramo https://kramo.hu"])
             .copyright("© 2023 Felipe Kinoshita.")
             .release_notes(gettext("
-                <p>This major release of Wildcard brings big changes:</p>
+                <p>This minor release of Wildcard brings:</p>
                 <ul>
-                  <li>A more streamlined layout for a better experience</li>
-                  <li>A nice dialog for quickly switching expression flags on/off</li>
+                  <li>Using new visuals for GNOME 45 apps</li>
                 </ul>
                 <p>Wildcard is made possible by volunteer developers, designers, and translators. Thank you for your contributions!</p>
                 <p>Feel free to report issues and ask for new features.</p>"
@@ -310,3 +309,4 @@ impl Window {
         dialog.present();
     }
 }
+

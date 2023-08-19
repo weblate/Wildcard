@@ -33,6 +33,16 @@
   <url type="translate">https://hosted.weblate.org/engage/wildcard</url>
   <content_rating type="oars-1.0"/>
   <releases>
+    <release version="0.2.1" date="2023-08-19">
+      <description>
+        <p>This minor release of Wildcard brings:</p>
+        <ul>
+          <li>New visuals for GNOME 45 apps</li>
+        </ul>
+        <p>Wildcard is made possible by volunteer developers, designers, and translators. Thank you for your contributions!</p>
+        <p>Feel free to report issues and ask for new features.</p>
+      </description>
+    </release>
     <release version="0.2.0" date="2023-06-27">
       <description>
         <p>This major release of Wildcard brings big changes:</p>

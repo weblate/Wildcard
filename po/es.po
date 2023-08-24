@@ -1,0 +1,129 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: fkinoshita@gnome.org\n"
+"POT-Creation-Date: 2023-07-02 22:25-0300\n"
+"PO-Revision-Date: 2023-08-24 04:51+0000\n"
+"Last-Translator: Dennis Tobar <DENNIS.TOBAR@gmail.com>\n"
+"Language-Team: Spanish <https://hosted.weblate.org/projects/wildcard/"
+"wildcard/es/>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.0-dev\n"
+
+#: data/resources/ui/shortcuts.ui:11
+msgctxt "shortcut window"
+msgid "General"
+msgstr "General"
+
+#: data/resources/ui/shortcuts.ui:14
+msgctxt "shortcut window"
+msgid "Show Shortcuts"
+msgstr "Mostrar atajos"
+
+#: data/resources/ui/shortcuts.ui:20
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Salir"
+
+#: data/resources/ui/flags_dialog.ui:39
+msgid "Flags"
+msgstr ""
+
+#: data/resources/ui/flags_dialog.ui:54
+msgid "Multiline"
+msgstr "Multilínea"
+
+#: data/resources/ui/flags_dialog.ui:66
+msgid "Case Insensitive"
+msgstr ""
+
+#: data/resources/ui/flags_dialog.ui:78
+msgid "Ignore Whitespace"
+msgstr "Ignorar espacios en blanco"
+
+#: data/resources/ui/flags_dialog.ui:90
+msgid "Dot Matches Newline"
+msgstr ""
+
+#: data/resources/ui/flags_dialog.ui:102
+msgid "Unicode"
+msgstr "Unicode"
+
+#: data/resources/ui/flags_dialog.ui:114
+msgid "Swap Greed"
+msgstr ""
+
+#: data/resources/ui/window.ui:24
+msgid "Main Menu"
+msgstr "Menú principal"
+
+#: data/resources/ui/window.ui:44
+msgid "Test String"
+msgstr "Cadena de prueba"
+
+#: data/resources/ui/window.ui:83
+msgid "no matches"
+msgstr "sin coincidencias"
+
+#: data/resources/ui/window.ui:99
+msgid "Options"
+msgstr "Opciones"
+
+#: data/resources/ui/window.ui:102
+msgid "Regular Expression"
+msgstr "Expresión Regular"
+
+#: data/resources/ui/window.ui:109 data/resources/ui/info_dialog.ui:26
+msgid "Regex Flavor"
+msgstr ""
+
+#: data/resources/ui/window.ui:123
+msgid "Expression Flags"
+msgstr ""
+
+#: data/resources/ui/window.ui:147
+msgid "_Keyboard Shortcuts"
+msgstr "_Atajos de Teclado"
+
+#: data/resources/ui/window.ui:151
+msgid "_About Wildcard"
+msgstr "_Acerca de Wildcard"
+
+#: data/resources/ui/info_dialog.ui:27
+msgid ""
+"Wildcard syntax is similar to Perl-style regular expressions, but lacks a "
+"few features like look around and backreferences."
+msgstr ""
+"La sintaxis de Wildcard es similar las expresiones regulares de Perl, pero "
+"no posee algunas características como revisar adelante y revisar atrás (look "
+"around / backreferences)."
+
+#: src/window.rs:289
+msgid "Test your regular expressions"
+msgstr "Prueba tus expresiones regulares"
+
+#: src/window.rs:294
+msgid "translator-credits"
+msgstr "Dennis Tobar <contacto@dennistobar.cl>"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/com.felipekinoshita.Wildcard.desktop.in.in:12
+msgid "regex;regular;expressions;"
+msgstr "regex;regular;expressiones;"
+
+#: data/com.felipekinoshita.Wildcard.metainfo.xml.in.in:13
+msgid ""
+"Wildcard gives you a nice and simple to use interface to test/practice "
+"regular expressions."
+msgstr ""
+"Wildcard te entrega una interfaz amigable y simple para probar/practicar "
+"expresiones regulares."

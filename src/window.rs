@@ -156,7 +156,7 @@ mod imp {
 
     impl WidgetImpl for Window {}
     impl WindowImpl for Window {
-        fn close_request(&self) -> gtk::Inhibit {
+        fn close_request(&self) -> glib::Propagation {
             let window = self.obj();
 
             if let Err(err) = window.save_regex_state() {

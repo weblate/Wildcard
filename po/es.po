@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: fkinoshita@gnome.org\n"
 "POT-Creation-Date: 2023-07-02 22:25-0300\n"
-"PO-Revision-Date: 2023-08-24 04:51+0000\n"
-"Last-Translator: Dennis Tobar <DENNIS.TOBAR@gmail.com>\n"
+"PO-Revision-Date: 2023-09-09 16:04+0000\n"
+"Last-Translator: gallegonovato <fran-carro@hotmail.es>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/wildcard/"
 "wildcard/es/>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.0-dev\n"
+"X-Generator: Weblate 5.0.1-dev\n"
 
 #: data/resources/ui/shortcuts.ui:11
 msgctxt "shortcut window"
@@ -36,7 +36,7 @@ msgstr "Salir"
 
 #: data/resources/ui/flags_dialog.ui:39
 msgid "Flags"
-msgstr ""
+msgstr "Banderas (flags)"
 
 #: data/resources/ui/flags_dialog.ui:54
 msgid "Multiline"
@@ -44,7 +44,7 @@ msgstr "Multilínea"
 
 #: data/resources/ui/flags_dialog.ui:66
 msgid "Case Insensitive"
-msgstr ""
+msgstr "No distingue mayúsculas de minúsculas"
 
 #: data/resources/ui/flags_dialog.ui:78
 msgid "Ignore Whitespace"
@@ -52,7 +52,7 @@ msgstr "Ignorar espacios en blanco"
 
 #: data/resources/ui/flags_dialog.ui:90
 msgid "Dot Matches Newline"
-msgstr ""
+msgstr "El punto coincide con una nueva línea"
 
 #: data/resources/ui/flags_dialog.ui:102
 msgid "Unicode"

@@ -393,9 +393,10 @@ impl Window {
             .artists(vec!["kramo https://kramo.hu"])
             .copyright("© 2023 Felipe Kinoshita.")
             .release_notes(gettext("
-                <p>This minor release of Wildcard brings:</p>
+                <p>New major release:</p>
                 <ul>
-                  <li>Using new visuals for GNOME 45 apps</li>
+                  <li>New references sidebar, taking advantage of the new sidebar widget on GNOME 45.</li>
+                  <li>Updated translations.</li>
                 </ul>
                 <p>Wildcard is made possible by volunteer developers, designers, and translators. Thank you for your contributions!</p>
                 <p>Feel free to report issues and ask for new features.</p>"

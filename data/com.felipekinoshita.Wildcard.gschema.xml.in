@@ -3,12 +3,12 @@
 	<schema id="@app-id@" path="/com/felipekinoshita/Wildcard/">
 
 	  <key name="window-width" type="i">
-	    <default>415</default>
+	    <default>650</default>
 	    <summary>Window width</summary>
 	  </key>
 
 	  <key name="window-height" type="i">
-	    <default>570</default>
+	    <default>700</default>
 	    <summary>Window height</summary>
 	  </key>
 

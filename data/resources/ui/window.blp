@@ -3,116 +3,159 @@ using Adw 1;
 
 template $Window : Adw.ApplicationWindow {
   title: _("Wildcard");
-  default-width: 415;
-  default-height: 570;
-  width-request: 300;
-  height-request: 250;
+  default-width: 650;
+  default-height: 700;
+  width-request: 450;
+  height-request: 450;
 
   content: Adw.ToastOverlay toast_overlay {
-    child: Adw.ToolbarView {
-      [top]
-      Adw.HeaderBar {
-        [end]
-        Gtk.MenuButton {
-          menu-model: primary_menu;
-          primary: true;
-          tooltip-text: _("Main Menu");
-          icon-name: "open-menu-symbolic";
-        }
-      }
+    child: Adw.OverlaySplitView {
+      show-sidebar: bind reference_toggle_button.active;
+      sidebar-position: end;
+      sidebar-width-fraction: 0.4;
+      min-sidebar-width: 200;
 
-      content: Adw.Clamp {
-        Gtk.Box {
-          orientation: vertical;
-          hexpand: true;
-          vexpand: true;
-          margin-top: 0;
-          margin-bottom: 18;
-          margin-start: 18;
-          margin-end: 18;
-          spacing: 18;
+      sidebar: Adw.NavigationPage {
+        title: _("Reference");
 
-          Adw.PreferencesGroup {
-            title: _("Test String");
+        child: Adw.ToolbarView {
+          [top]
+          Adw.HeaderBar {}
 
+          content: Gtk.ScrolledWindow {
+            hexpand: true;
+            vexpand: true;
+
+            Gtk.ListView examples_list_view {
+              single-click-activate: true;
+              hexpand: true;
+              vexpand: true;
+
+              styles ["navigation-sidebar"]
+
+              activate => $on_list_view_activated() swapped;
+            }
+          };
+
+        };
+      };
+
+      content: Adw.NavigationPage {
+        title: _("Wildcard");
+
+        child: Adw.ToolbarView {
+          [top]
+          Adw.HeaderBar {
+            [start]
+            Gtk.MenuButton {
+              menu-model: primary_menu;
+              primary: true;
+              tooltip-text: _("Main Menu");
+              icon-name: "open-menu-symbolic";
+            }
+
+            [end]
+            Gtk.ToggleButton reference_toggle_button {
+              active: true;
+              icon-name: "sidebar-show-right-symbolic";
+            }
+          }
+
+          content: Adw.Clamp {
             Gtk.Box {
               orientation: vertical;
               hexpand: true;
               vexpand: true;
+              margin-top: 0;
+              margin-bottom: 18;
+              margin-start: 18;
+              margin-end: 18;
+              spacing: 18;
 
-              styles ["card", "text-box"]
+              Adw.PreferencesGroup {
+                title: _("Test String");
 
-              Gtk.ScrolledWindow {
-                hexpand: true;
-                vexpand: true;
-                height-request: 160;
-
-                styles ["scrolled-window"]
-
-                Gtk.TextView {
-                  monospace: true;
-                  wrap-mode: word_char;
+                Gtk.Box {
+                  orientation: vertical;
                   hexpand: true;
                   vexpand: true;
-                  top-margin: 12;
-                  bottom-margin: 12;
-                  left-margin: 12;
-                  right-margin: 12;
 
-                  buffer: Gtk.TextBuffer test_buffer {
-                    changed => $on_buffer_changed() swapped;
-                  };
+                  styles ["card", "text-box"]
+
+                  Gtk.ScrolledWindow {
+                    hexpand: true;
+                    vexpand: true;
+                    height-request: 160;
+
+                    styles ["scrolled-window"]
+
+                    Gtk.TextView {
+                      monospace: true;
+                      wrap-mode: word_char;
+                      hexpand: true;
+                      vexpand: true;
+                      top-margin: 12;
+                      bottom-margin: 12;
+                      left-margin: 12;
+                      right-margin: 12;
+
+                      buffer: Gtk.TextBuffer test_buffer {
+                        changed => $on_buffer_changed() swapped;
+                      };
+                    }
+                  }
+
+                  Gtk.Label matches_label {
+                    label: _("no matches");
+                    halign: end;
+                    margin-top: 6;
+                    margin-bottom: 6;
+                    margin-end: 12;
+
+                    styles ["dim-label"]
+                  }
                 }
               }
 
-              Gtk.Label matches_label {
-                label: _("no matches");
-                halign: end;
-                margin-top: 6;
-                margin-bottom: 6;
-                margin-end: 12;
+              Adw.PreferencesGroup {
+                title: _("Options");
 
-                styles ["dim-label"]
+                Adw.EntryRow regex_row {
+                  title: _("Regular Expression");
+
+                  changed => $on_buffer_changed() swapped;
+
+                  styles ["monospace"]
+
+                  [suffix]
+                  Gtk.Button {
+                    tooltip-text: _("Regex Flavor");
+                    icon-name: "dialog-information-symbolic";
+                    valign: center;
+
+                    clicked => $on_info_button_clicked() swapped;
+
+                    styles ["flat", "circular"]
+                  }
+                }
+
+                Adw.ActionRow flags_row {
+                  title: _("Expression Flags");
+                  activatable: true;
+
+                  activated => $on_flags_row_activated() swapped;
+
+                  [suffix]
+                  Gtk.Image {
+                    icon-name: "go-next-symbolic";
+                  }
+                }
               }
             }
-          }
-
-          Adw.PreferencesGroup {
-            title: _("Options");
-
-            Adw.EntryRow regex_row {
-              title: _("Regular Expression");
-
-              changed => $on_buffer_changed() swapped;
-
-              styles ["monospace"]
-
-              [suffix]
-              Gtk.Button {
-                tooltip-text: _("Regex Flavor");
-                icon-name: "dialog-information-symbolic";
-                valign: center;
-
-                clicked => $on_info_button_clicked() swapped;
-
-                styles ["flat", "circular"]
-              }
-            }
-
-            Adw.ActionRow flags_row {
-              title: _("Expression Flags");
-              activatable: true;
-
-              activated => $on_flags_row_activated() swapped;
-
-              [suffix]
-              Gtk.Image {
-                icon-name: "go-next-symbolic";
-              }
-            }
-          }
-        }
+          };
+        };
       };
+
     };
   };
 }

@@ -1,0 +1,49 @@
+A single character of: a, b or c
+[abc]
+[abc]
+aabbcc
+
+A character except: a, b or c
+[^abc]
+[^abc]
+aabbccdef
+
+A character in the range: a to z
+[a-z]
+[a-z]
+asdfghjkl
+
+Alternate: a or b
+a|b
+a|b
+aoub
+
+Any word character
+\w
+\w
+Lorem ipsum dolor sit amet
+
+Any digit
+\d
+\d
+1000 + 2000
+
+Zero or more of a
+a*
+a*
+aaa baaa caaa
+
+One or more of a
+a+
+a+
+caaa baaa aaa
+
+Start of string
+^
+^\w+
+start of string
+
+End of string
+$
+\w+$
+end of string

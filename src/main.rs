@@ -23,6 +23,7 @@ mod config;
 mod i18n;
 mod flags_dialog;
 mod window;
+mod regex_example;
 
 use gettextrs::{gettext, LocaleCategory};
 use gtk::{gio, glib};

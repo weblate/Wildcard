@@ -3,7 +3,7 @@
 use regex::{Regex, RegexBuilder};
 
 use adw::subclass::prelude::*;
-use gtk::prelude::*;
+use adw::prelude::*;
 use gtk::{gio, glib};
 
 use gettextrs::gettext;
@@ -13,6 +13,7 @@ use crate::i18n::ngettext_f;
 use crate::application::Application;
 use crate::config::{APP_ID, PROFILE, VERSION};
 use crate::flags_dialog::FlagsDialog;
+use crate::regex_example::RegexExample;
 
 mod imp {
     use super::*;
@@ -21,6 +22,9 @@ mod imp {
     #[template(resource = "/com/felipekinoshita/Wildcard/ui/window.ui")]
     pub struct Window {
         pub settings: gio::Settings,
+
+        #[template_child]
+        pub examples_list_view: TemplateChild<gtk::ListView>,
 
         #[template_child]
         pub test_buffer: TemplateChild<gtk::TextBuffer>,
@@ -35,6 +39,8 @@ mod imp {
         fn default() -> Self {
             Self {
                 settings: gio::Settings::new(APP_ID),
+
+                examples_list_view: TemplateChild::default(),
 
                 test_buffer: TemplateChild::default(),
                 regex_row: TemplateChild::default(),
@@ -74,6 +80,7 @@ mod imp {
                 obj.add_css_class("devel");
             }
 
+            obj.populate_examples_list();
             obj.setup_text_views();
             obj.load_regex_state();
             obj.load_window_size();
@@ -82,6 +89,23 @@ mod imp {
 
     #[gtk::template_callbacks]
     impl Window {
+        #[template_callback]
+        fn on_list_view_activated(&self, position: u32) {
+            let obj = self.obj();
+            let imp = obj.imp();
+
+            let list_view = imp.examples_list_view.get();
+            let model = list_view.model().expect("The model has to exist.");
+
+            let regex_example = model
+                .item(position)
+                .and_downcast::<RegexExample>()
+                .expect("The item has to be an `RegexExample`.");
+
+            imp.test_buffer.get().set_text(&regex_example.example());
+            imp.regex_row.get().set_text(&regex_example.regex());
+        }
+
         #[template_callback]
         fn on_buffer_changed(&self) {
             let regex_string = self.regex_row.text();
@@ -186,6 +210,78 @@ impl Window {
         glib::Object::builder()
             .property("application", application)
             .build()
+    }
+
+    fn populate_examples_list(&self) {
+        let imp = self.imp();
+
+        let raw_data = gio::File::for_uri("resource:///com/felipekinoshita/Wildcard/examples.txt")
+            .load_contents(None::<&gio::Cancellable>)
+            .unwrap()
+            .0;
+        let data_string = std::str::from_utf8(&raw_data).unwrap();
+        let lines: Vec<&str> = data_string.lines().collect();
+        let chunks = lines.split(|line| line.is_empty());
+
+        let mut examples_list = vec![];
+
+        for chunk in chunks {
+            let mut chunk_iter = chunk.iter();
+            let title = chunk_iter.next().unwrap();
+            let subtitle = chunk_iter.next().unwrap();
+            let regex = chunk_iter.next().unwrap();
+            let example = chunk_iter.next().unwrap();
+
+            examples_list.push(
+                RegexExample::new(&gettext(title.to_string()), subtitle, regex, example)
+            );
+        }
+
+        let model = gio::ListStore::new::<RegexExample>();
+        model.extend_from_slice(&examples_list);
+
+        let factory = gtk::SignalListItemFactory::new();
+        factory.connect_setup(move |_, list_item| {
+            let row = adw::ActionRow::new();
+
+            list_item
+                .downcast_ref::<gtk::ListItem>()
+                .expect("")
+                .set_selectable(false);
+
+            list_item
+                .downcast_ref::<gtk::ListItem>()
+                .expect("Needs to be ListItem")
+                .set_child(Some(&row));
+        });
+
+        factory.connect_bind(move |_, list_item| {
+            let example = list_item
+                .downcast_ref::<gtk::ListItem>()
+                .expect("Needs to be ListItem")
+                .item()
+                .and_downcast::<RegexExample>()
+                .expect("The item has to be an `RegexExample`.");
+
+            let row = list_item
+                .downcast_ref::<gtk::ListItem>()
+                .expect("Needs to be ListItem")
+                .child()
+                .and_downcast::<adw::ActionRow>()
+                .expect("The child has to be a `AdwActionRow`.");
+
+            row.set_title(&example.title());
+            row.set_subtitle(&example.subtitle());
+        });
+
+        let selection_model = gtk::SingleSelection::builder()
+            .autoselect(false)
+            .selected(0)
+            .model(&model)
+            .build();
+
+        imp.examples_list_view.set_factory(Some(&factory));
+        imp.examples_list_view.set_model(Some(&selection_model));
     }
 
     fn setup_text_views(&self) {

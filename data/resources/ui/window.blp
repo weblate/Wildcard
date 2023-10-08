@@ -20,7 +20,12 @@ template $Window : Adw.ApplicationWindow {
 
         child: Adw.ToolbarView {
           [top]
-          Adw.HeaderBar {}
+          Adw.HeaderBar {
+            title-widget: Adw.WindowTitle {
+              title: _("Reference");
+              subtitle: _("Click to insert example");
+            };
+          }
 
           content: Gtk.ScrolledWindow {
             hexpand: true;

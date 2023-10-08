@@ -102,7 +102,10 @@ mod imp {
                 .and_downcast::<RegexExample>()
                 .expect("The item has to be an `RegexExample`.");
 
-            imp.test_buffer.get().set_text(&regex_example.example());
+            let test_buffer = imp.test_buffer.get();
+            test_buffer.delete(&mut test_buffer.start_iter(), &mut test_buffer.end_iter());
+            test_buffer.insert(&mut test_buffer.start_iter(), &regex_example.example());
+
             imp.regex_row.get().set_text(&regex_example.regex());
         }
 

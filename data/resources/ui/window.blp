@@ -5,15 +5,22 @@ template $Window : Adw.ApplicationWindow {
   title: _("Wildcard");
   default-width: 650;
   default-height: 700;
-  width-request: 450;
-  height-request: 450;
+  width-request: 360;
+  height-request: 480;
+
+  Adw.Breakpoint {
+    condition ("max-width: 400px")
+    setters {
+      reference_toggle_button.active: false;
+    }
+  }
 
   content: Adw.ToastOverlay toast_overlay {
     child: Adw.OverlaySplitView {
       show-sidebar: bind reference_toggle_button.active;
       sidebar-position: end;
       sidebar-width-fraction: 0.4;
-      min-sidebar-width: 200;
+      min-sidebar-width: 150;
 
       sidebar: Adw.NavigationPage {
         title: _("Reference");

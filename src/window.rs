@@ -24,6 +24,9 @@ mod imp {
         pub settings: gio::Settings,
 
         #[template_child]
+        pub reference_toggle_button: TemplateChild<gtk::ToggleButton>,
+
+        #[template_child]
         pub examples_list_view: TemplateChild<gtk::ListView>,
 
         #[template_child]
@@ -39,6 +42,8 @@ mod imp {
         fn default() -> Self {
             Self {
                 settings: gio::Settings::new(APP_ID),
+
+                reference_toggle_button: TemplateChild::default(),
 
                 examples_list_view: TemplateChild::default(),
 
@@ -82,6 +87,7 @@ mod imp {
 
             obj.populate_examples_list();
             obj.setup_text_views();
+            obj.load_reference_panel_state();
             obj.load_regex_state();
             obj.load_window_size();
         }
@@ -185,6 +191,10 @@ mod imp {
     impl WindowImpl for Window {
         fn close_request(&self) -> glib::Propagation {
             let window = self.obj();
+
+            if let Err(err) = window.save_reference_panel_state() {
+                log::error!("Failed to save reference panel state, {}", &err);
+            }
 
             if let Err(err) = window.save_regex_state() {
                 log::error!("Failed to save regex state, {}", &err);
@@ -302,6 +312,26 @@ impl Window {
         );
         imp.test_buffer
             .create_tag(Some("marked_highlight"), &[("background", &"#f9f06b")]);
+    }
+
+    fn save_reference_panel_state(&self) -> Result<(), glib::BoolError> {
+        let imp = self.imp();
+
+        let state = imp.reference_toggle_button.is_active();
+
+        println!("{}", state);
+
+        imp.settings.set_boolean("reference-panel-state", state)?;
+
+        Ok(())
+    }
+
+    fn load_reference_panel_state(&self) {
+        let imp = self.imp();
+
+        let state = imp.settings.boolean("reference-panel-state");
+
+        imp.reference_toggle_button.set_active(state);
     }
 
     fn save_regex_state(&self) -> Result<(), glib::BoolError> {

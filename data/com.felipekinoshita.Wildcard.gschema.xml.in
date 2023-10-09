@@ -22,6 +22,11 @@
 	    <summary>Last test insert</summary>
 	  </key>
 
+	  <key name="reference-panel-state" type="b">
+	    <default>true</default>
+	    <summary>The last state of the reference panel sidebar</summary>
+	  </key>
+
 	  <key name="multiline-flag" type="b">
 	    <default>true</default>
 	    <summary>Use the multiline flag</summary>

@@ -319,8 +319,6 @@ impl Window {
 
         let state = imp.reference_toggle_button.is_active();
 
-        println!("{}", state);
-
         imp.settings.set_boolean("reference-panel-state", state)?;
 
         Ok(())

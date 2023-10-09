@@ -34,6 +34,16 @@
   <url type="vcs-browser">https://github.com/fkinoshita/Wildcard</url>
   <content_rating type="oars-1.0"/>
   <releases>
+    <release version="0.3.1" date="2023-10-09">
+      <description>
+        <p>New minor release:</p>
+        <ul>
+          <li>Make sure app window fits on 360px monitors</li>
+        </ul>
+        <p>Wildcard is made possible by volunteer developers, designers, and translators. Thank you for your contributions!</p>
+        <p>Feel free to report issues and ask for new features.</p>
+      </description>
+    </release>
     <release version="0.3.0" date="2023-10-07">
       <description translatable="no">
         <p>New major release:</p>

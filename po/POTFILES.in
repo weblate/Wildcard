@@ -1,6 +1,8 @@
 data/com.felipekinoshita.Wildcard.desktop.in.in
 data/com.felipekinoshita.Wildcard.gschema.xml.in
 data/com.felipekinoshita.Wildcard.metainfo.xml.in.in
+data/resources/ui/flags_dialog.blp
+data/resources/ui/info_dialog.blp
 data/resources/ui/shortcuts.ui
 data/resources/ui/window.blp
 src/main.rs

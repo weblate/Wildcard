@@ -5,7 +5,7 @@
 	<project_license>GPL-3.0-or-later</project_license>
   <name>Wildcard</name>
   <summary>Test your regular expressions</summary>
-  <developer_name>Felipe Kinoshita</developer_name>
+  <developer_name translatable="no">Felipe Kinoshita</developer_name>
   <update_contact>fkinoshita@gnome.org</update_contact>
   <translation type="gettext">@gettext-package@</translation>
 	<launchable type="desktop-id">@app-id@.desktop</launchable>
@@ -31,10 +31,11 @@
   <url type="bugtracker">https://github.com/fkinoshita/Wildcard/issues</url>
   <url type="donation">https://ko-fi.com/fkinoshita</url>
   <url type="translate">https://hosted.weblate.org/engage/wildcard</url>
+  <url type="vcs-browser">https://github.com/fkinoshita/Wildcard</url>
   <content_rating type="oars-1.0"/>
   <releases>
     <release version="0.3.0" date="2023-10-07">
-      <description>
+      <description translatable="no">
         <p>New major release:</p>
         <ul>
           <li>New references sidebar, taking advantage of the new sidebar widget on GNOME 45.</li>
@@ -45,7 +46,7 @@
       </description>
     </release>
     <release version="0.2.1" date="2023-08-19">
-      <description>
+      <description translatable="no">
         <p>This minor release of Wildcard brings:</p>
         <ul>
           <li>New visuals for GNOME 45 apps</li>
@@ -55,7 +56,7 @@
       </description>
     </release>
     <release version="0.2.0" date="2023-06-27">
-      <description>
+      <description translatable="no">
         <p>This major release of Wildcard brings big changes:</p>
         <ul>
           <li>A more streamlined layout for a better experience</li>
@@ -66,7 +67,7 @@
       </description>
     </release>
     <release version="0.1.2" date="2023-06-15">
-      <description>
+      <description translatable="no">
         <p>This is minor release of Wildcard brings much needed fixes and improvements:</p>
         <ul>
           <li>Fixed scrolling issues on the text views</li>
@@ -78,7 +79,7 @@
       </description>
     </release>
     <release version="0.1.1" date="2023-06-14">
-      <description>
+      <description translatable="no">
         <p>This is minor release of Wildcard brings a bunch of small quality-of-life improvements:</p>
         <ul>
           <li>Visual enhancements to the overall layout and to the text boxes</li>
@@ -89,7 +90,7 @@
       </description>
     </release>
     <release version="0.1.0" date="2023-06-13">
-      <description>
+      <description translatable="no">
         <p>This is the first release of Wildcard, here are some available features:</p>
         <ul>
           <li>Support for flags with the regex/FLAGS syntax</li>

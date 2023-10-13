@@ -28,6 +28,7 @@ msgstr "Wildcard"
 
 #: data/com.felipekinoshita.Wildcard.desktop.in.in:4
 #: data/com.felipekinoshita.Wildcard.metainfo.xml.in.in:7 src/window.rs:416
+#: src/window.rs:289
 msgid "Test your regular expressions"
 msgstr "Düzenli ifadelerinizi sınayın"
 
@@ -89,26 +90,27 @@ msgstr ""
 "kullanımı basit bir arayüz sunar."
 
 #: data/resources/ui/flags_dialog.blp:5 data/resources/ui/flags_dialog.blp:34
+#: data/resources/ui/flags_dialog.ui:39
 msgid "Flags"
 msgstr "Bayraklar"
 
-#: data/resources/ui/flags_dialog.blp:47
+#: data/resources/ui/flags_dialog.blp:47 data/resources/ui/flags_dialog.ui:54
 msgid "Multiline"
 msgstr "Çoklu satır"
 
-#: data/resources/ui/flags_dialog.blp:58
+#: data/resources/ui/flags_dialog.blp:58 data/resources/ui/flags_dialog.ui:66
 msgid "Case Insensitive"
 msgstr "Büyük/Küçük Harf Duyarsız"
 
-#: data/resources/ui/flags_dialog.blp:69
+#: data/resources/ui/flags_dialog.blp:69 data/resources/ui/flags_dialog.ui:78
 msgid "Ignore Whitespace"
 msgstr "Boşlukları Yok Say"
 
-#: data/resources/ui/flags_dialog.blp:80
+#: data/resources/ui/flags_dialog.blp:80 data/resources/ui/flags_dialog.ui:90
 msgid "Dot Matches Newline"
 msgstr "Nokta Yeni Satırla Eşleşir"
 
-#: data/resources/ui/flags_dialog.blp:91
+#: data/resources/ui/flags_dialog.blp:91 data/resources/ui/flags_dialog.ui:102
 msgid "Unicode"
 msgstr "Unikod"
 
@@ -117,10 +119,11 @@ msgid "Swap Greed"
 msgstr ""
 
 #: data/resources/ui/info_dialog.blp:23 data/resources/ui/window.blp:145
+#: data/resources/ui/window.ui:109 data/resources/ui/info_dialog.ui:26
 msgid "Regex Flavor"
 msgstr "Regex Türevi"
 
-#: data/resources/ui/info_dialog.blp:24
+#: data/resources/ui/info_dialog.blp:24 data/resources/ui/info_dialog.ui:27
 msgid ""
 "Wildcard syntax is similar to Perl-style regular expressions, but lacks a "
 "few features like look around and backreferences."
@@ -151,7 +154,7 @@ msgstr "Referans"
 msgid "Click to insert example"
 msgstr "Örneği eklemek için tıklayın"
 
-#: data/resources/ui/window.blp:65
+#: data/resources/ui/window.blp:65 data/resources/ui/window.ui:24
 msgid "Main Menu"
 msgstr "Ana Menü"
 
@@ -159,35 +162,36 @@ msgstr "Ana Menü"
 msgid "Toggle Reference Panel"
 msgstr "Referans Panelini Aç/Kapat"
 
-#: data/resources/ui/window.blp:89
+#: data/resources/ui/window.blp:89 data/resources/ui/window.ui:44
 msgid "Test String"
 msgstr "Sınama Dizgesi"
 
 #: data/resources/ui/window.blp:122 src/window.rs:167
+#: data/resources/ui/window.ui:83
 msgid "no matches"
 msgstr "Eşleşme yok"
 
-#: data/resources/ui/window.blp:134
+#: data/resources/ui/window.blp:134 data/resources/ui/window.ui:99
 msgid "Options"
 msgstr "Seçenekler"
 
-#: data/resources/ui/window.blp:137
+#: data/resources/ui/window.blp:137 data/resources/ui/window.ui:102
 msgid "Regular Expression"
 msgstr "Düzenli İfade"
 
-#: data/resources/ui/window.blp:156
+#: data/resources/ui/window.blp:156 data/resources/ui/window.ui:123
 msgid "Expression Flags"
 msgstr "İfade Bayrakları"
 
-#: data/resources/ui/window.blp:180
+#: data/resources/ui/window.blp:180 data/resources/ui/window.ui:147
 msgid "_Keyboard Shortcuts"
 msgstr "Klavye _Kısayolları"
 
-#: data/resources/ui/window.blp:185
+#: data/resources/ui/window.blp:185 data/resources/ui/window.ui:151
 msgid "_About Wildcard"
 msgstr "Wildcard _Hakkında"
 
-#: src/window.rs:421
+#: src/window.rs:421 src/window.rs:294
 msgid "translator-credits"
 msgstr "Sabri Ünal <libreajans@gmail.com>"
 

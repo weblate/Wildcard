@@ -112,7 +112,7 @@ msgstr "Nokta Yeni Satırla Eşleşir"
 msgid "Unicode"
 msgstr "Unikod"
 
-#: data/resources/ui/flags_dialog.blp:102
+#: data/resources/ui/flags_dialog.blp:102 data/resources/ui/flags_dialog.ui:114
 msgid "Swap Greed"
 msgstr ""
 

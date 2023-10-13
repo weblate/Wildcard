@@ -423,15 +423,8 @@ impl Window {
             .developers(vec!["Felipe Kinoshita <fkinoshita@gnome.org>"])
             .artists(vec!["kramo https://kramo.hu"])
             .copyright("© 2023 Felipe Kinoshita.")
-            .release_notes(gettext("
-                <p>New major release:</p>
-                <ul>
-                  <li>New references sidebar, taking advantage of the new sidebar widget on GNOME 45.</li>
-                  <li>Updated translations.</li>
-                </ul>
-                <p>Wildcard is made possible by volunteer developers, designers, and translators. Thank you for your contributions!</p>
-                <p>Feel free to report issues and ask for new features.</p>"
-            ))
+            .release_notes_version("0.3.0")
+            .release_notes(gettext("<p>New major release:</p>\n<ul>\n<li>New references sidebar, taking advantage of the new sidebar widget on GNOME 45.</li>\n<li>Updated translations.</li>\n</ul>\n<p>Wildcard is made possible by volunteer developers, designers, and translators. Thank you for your contributions!</p>\n<p>Feel free to report issues and ask for new features.</p>"))
             .build();
 
         dialog.present();

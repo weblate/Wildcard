@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-02 22:25-0300\n"
+"POT-Creation-Date: 2023-10-14 01:34+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +16,111 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: data/com.felipekinoshita.Wildcard.desktop.in.in:3
+#: data/com.felipekinoshita.Wildcard.metainfo.xml.in.in:6
+#: data/resources/ui/window.blp:5 data/resources/ui/window.blp:56
+#: src/main.rs:43 src/window.rs:414
+msgid "Wildcard"
+msgstr ""
+
+#: data/com.felipekinoshita.Wildcard.desktop.in.in:4
+#: data/com.felipekinoshita.Wildcard.metainfo.xml.in.in:7 src/window.rs:416
+msgid "Test your regular expressions"
+msgstr ""
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/com.felipekinoshita.Wildcard.desktop.in.in:12
+msgid "regex;regular;expressions;"
+msgstr ""
+
+#: data/com.felipekinoshita.Wildcard.gschema.xml.in:7
+msgid "Window width"
+msgstr ""
+
+#: data/com.felipekinoshita.Wildcard.gschema.xml.in:12
+msgid "Window height"
+msgstr ""
+
+#: data/com.felipekinoshita.Wildcard.gschema.xml.in:17
+msgid "Last regular expression insert"
+msgstr ""
+
+#: data/com.felipekinoshita.Wildcard.gschema.xml.in:22
+msgid "Last test insert"
+msgstr ""
+
+#: data/com.felipekinoshita.Wildcard.gschema.xml.in:27
+msgid "The last state of the reference panel sidebar"
+msgstr ""
+
+#: data/com.felipekinoshita.Wildcard.gschema.xml.in:32
+msgid "Use the multiline flag"
+msgstr ""
+
+#: data/com.felipekinoshita.Wildcard.gschema.xml.in:37
+msgid "Use the case insensitive flag"
+msgstr ""
+
+#: data/com.felipekinoshita.Wildcard.gschema.xml.in:42
+msgid "Use the ignore whitespace flag"
+msgstr ""
+
+#: data/com.felipekinoshita.Wildcard.gschema.xml.in:47
+msgid "Use the dot matches newline flag"
+msgstr ""
+
+#: data/com.felipekinoshita.Wildcard.gschema.xml.in:52
+msgid "Use the unicode flag"
+msgstr ""
+
+#: data/com.felipekinoshita.Wildcard.gschema.xml.in:57
+msgid "Use the greed flag"
+msgstr ""
+
+#: data/com.felipekinoshita.Wildcard.metainfo.xml.in.in:13
+msgid ""
+"Wildcard gives you a nice and simple to use interface to test/practice "
+"regular expressions."
+msgstr ""
+
+#: data/resources/ui/flags_dialog.blp:5 data/resources/ui/flags_dialog.blp:34
+msgid "Flags"
+msgstr ""
+
+#: data/resources/ui/flags_dialog.blp:47
+msgid "Multiline"
+msgstr ""
+
+#: data/resources/ui/flags_dialog.blp:58
+msgid "Case Insensitive"
+msgstr ""
+
+#: data/resources/ui/flags_dialog.blp:69
+msgid "Ignore Whitespace"
+msgstr ""
+
+#: data/resources/ui/flags_dialog.blp:80
+msgid "Dot Matches Newline"
+msgstr ""
+
+#: data/resources/ui/flags_dialog.blp:91
+msgid "Unicode"
+msgstr ""
+
+#: data/resources/ui/flags_dialog.blp:102
+msgid "Swap Greed"
+msgstr ""
+
+#: data/resources/ui/info_dialog.blp:23 data/resources/ui/window.blp:145
+msgid "Regex Flavor"
+msgstr ""
+
+#: data/resources/ui/info_dialog.blp:24
+msgid ""
+"Wildcard syntax is similar to Perl-style regular expressions, but lacks a "
+"few features like look around and backreferences."
+msgstr ""
 
 #: data/resources/ui/shortcuts.ui:11
 msgctxt "shortcut window"
@@ -32,91 +137,59 @@ msgctxt "shortcut window"
 msgid "Quit"
 msgstr ""
 
-#: data/resources/ui/flags_dialog.ui:39
-msgid "Flags"
+#: data/resources/ui/window.blp:26 data/resources/ui/window.blp:32
+msgid "Reference"
 msgstr ""
 
-#: data/resources/ui/flags_dialog.ui:54
-msgid "Multiline"
+#: data/resources/ui/window.blp:33
+msgid "Click to insert example"
 msgstr ""
 
-#: data/resources/ui/flags_dialog.ui:66
-msgid "Case Insensitive"
-msgstr ""
-
-#: data/resources/ui/flags_dialog.ui:78
-msgid "Ignore Whitespace"
-msgstr ""
-
-#: data/resources/ui/flags_dialog.ui:90
-msgid "Dot Matches Newline"
-msgstr ""
-
-#: data/resources/ui/flags_dialog.ui:102
-msgid "Unicode"
-msgstr ""
-
-#: data/resources/ui/flags_dialog.ui:114
-msgid "Swap Greed"
-msgstr ""
-
-#: data/resources/ui/window.ui:24
+#: data/resources/ui/window.blp:65
 msgid "Main Menu"
 msgstr ""
 
-#: data/resources/ui/window.ui:44
+#: data/resources/ui/window.blp:73
+msgid "Toggle Reference Panel"
+msgstr ""
+
+#: data/resources/ui/window.blp:89
 msgid "Test String"
 msgstr ""
 
-#: data/resources/ui/window.ui:83
+#: data/resources/ui/window.blp:122 src/window.rs:167
 msgid "no matches"
 msgstr ""
 
-#: data/resources/ui/window.ui:99
+#: data/resources/ui/window.blp:134
 msgid "Options"
 msgstr ""
 
-#: data/resources/ui/window.ui:102
+#: data/resources/ui/window.blp:137
 msgid "Regular Expression"
 msgstr ""
 
-#: data/resources/ui/window.ui:109 data/resources/ui/info_dialog.ui:26
-msgid "Regex Flavor"
-msgstr ""
-
-#: data/resources/ui/window.ui:123
+#: data/resources/ui/window.blp:156
 msgid "Expression Flags"
 msgstr ""
 
-#: data/resources/ui/window.ui:147
+#: data/resources/ui/window.blp:180
 msgid "_Keyboard Shortcuts"
 msgstr ""
 
-#: data/resources/ui/window.ui:151
+#: data/resources/ui/window.blp:185
 msgid "_About Wildcard"
 msgstr ""
 
-#: data/resources/ui/info_dialog.ui:27
-msgid ""
-"Wildcard syntax is similar to Perl-style regular expressions, but lacks a "
-"few features like look around and backreferences."
-msgstr ""
-
-#: src/window.rs:289
-msgid "Test your regular expressions"
-msgstr ""
-
-#: src/window.rs:294
+#: src/window.rs:421
 msgid "translator-credits"
 msgstr ""
 
-#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/com.felipekinoshita.Wildcard.desktop.in.in:12
-msgid "regex;regular;expressions;"
-msgstr ""
-
-#: data/com.felipekinoshita.Wildcard.metainfo.xml.in.in:13
+#: src/window.rs:427
 msgid ""
-"Wildcard gives you a nice and simple to use interface to test/practice "
-"regular expressions."
+"<p>New major release:</p><ul><li>New references sidebar, taking advantage of "
+"the new sidebar widget on GNOME 45.</li><li>Updated translations.</li></"
+"ul><p>Wildcard is made possible by volunteer developers, designers, and "
+"translators. Thank you for your contributions!</p><p>Feel free to report "
+"issues and ask for new features.</p>"
 msgstr ""

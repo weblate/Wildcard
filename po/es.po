@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: fkinoshita@gnome.org\n"
 "POT-Creation-Date: 2023-07-02 22:25-0300\n"
-"PO-Revision-Date: 2023-09-09 16:04+0000\n"
+"PO-Revision-Date: 2023-10-13 22:26+0000\n"
 "Last-Translator: gallegonovato <fran-carro@hotmail.es>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/wildcard/"
 "wildcard/es/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.0.1-dev\n"
+"X-Generator: Weblate 5.1-dev\n"
 
 #: data/resources/ui/shortcuts.ui:11
 msgctxt "shortcut window"
@@ -84,11 +84,11 @@ msgstr "Expresión Regular"
 
 #: data/resources/ui/window.ui:109 data/resources/ui/info_dialog.ui:26
 msgid "Regex Flavor"
-msgstr ""
+msgstr "Opción de expresiones regulares"
 
 #: data/resources/ui/window.ui:123
 msgid "Expression Flags"
-msgstr ""
+msgstr "Marcas de la expresión"
 
 #: data/resources/ui/window.ui:147
 msgid "_Keyboard Shortcuts"

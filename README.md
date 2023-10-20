@@ -1,3 +1,5 @@
+# Development will continue [here](https://gitlab.gnome.org/fkinoshita/Wildcard)
+
 <h1 align="center">
   <img src="data/icons/hicolor/scalable/apps/com.felipekinoshita.Wildcard.svg" alt="Wildcard Icon" width="192" height="192"/>
   <br>
